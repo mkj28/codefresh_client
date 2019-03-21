@@ -121,7 +121,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pipelines_get**
-> pipelines_get(name, decrypt_variables=decrypt_variables)
+> object pipelines_get(name, decrypt_variables=decrypt_variables)
 
 Get
 
@@ -148,7 +148,8 @@ decrypt_variables = 'decrypt_variables_example' # str |  (optional)
 
 try:
     # Get
-    api_instance.pipelines_get(name, decrypt_variables=decrypt_variables)
+    api_response = api_instance.pipelines_get(name, decrypt_variables=decrypt_variables)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->pipelines_get: %s\n" % e)
 ```
@@ -162,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -171,7 +172,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

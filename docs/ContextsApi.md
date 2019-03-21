@@ -122,7 +122,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contexts_get**
-> contexts_get(name, decrypt=decrypt)
+> object contexts_get(name, decrypt=decrypt)
 
 Get
 
@@ -149,7 +149,8 @@ decrypt = 'decrypt_example' # str |  (optional)
 
 try:
     # Get
-    api_instance.contexts_get(name, decrypt=decrypt)
+    api_response = api_instance.contexts_get(name, decrypt=decrypt)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContextsApi->contexts_get: %s\n" % e)
 ```
@@ -163,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -172,12 +173,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contexts_list**
-> contexts_list(type=type, decrypt=decrypt)
+> object contexts_list(type=type, decrypt=decrypt)
 
 List
 
@@ -204,7 +205,8 @@ decrypt = 'decrypt_example' # str |  (optional)
 
 try:
     # List
-    api_instance.contexts_list(type=type, decrypt=decrypt)
+    api_response = api_instance.contexts_list(type=type, decrypt=decrypt)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContextsApi->contexts_list: %s\n" % e)
 ```
@@ -218,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -227,7 +229,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

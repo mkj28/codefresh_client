@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **triggers_types_get**
-> triggers_types_get(type, kind)
+> object triggers_types_get(type, kind)
 
 Get
 
@@ -36,7 +36,8 @@ kind = 'kind_example' # str |
 
 try:
     # Get
-    api_instance.triggers_types_get(type, kind)
+    api_response = api_instance.triggers_types_get(type, kind)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersTypesApi->triggers_types_get: %s\n" % e)
 ```
@@ -50,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -59,12 +60,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_types_list**
-> triggers_types_list()
+> object triggers_types_list()
 
 List
 
@@ -89,7 +90,8 @@ api_instance = codefresh_client.TriggersTypesApi(codefresh_client.ApiClient(conf
 
 try:
     # List
-    api_instance.triggers_types_list()
+    api_response = api_instance.triggers_types_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersTypesApi->triggers_types_list: %s\n" % e)
 ```
@@ -99,7 +101,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -108,7 +110,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

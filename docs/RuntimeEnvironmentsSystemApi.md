@@ -65,7 +65,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **on_prem_runtime_envs_system_get**
-> on_prem_runtime_envs_system_get(name, version=version, extend=extend, history=history, successors=successors)
+> object on_prem_runtime_envs_system_get(name, version=version, extend=extend, history=history, successors=successors)
 
 Get sys re
 
@@ -95,7 +95,8 @@ successors = 'successors_example' # str |  (optional)
 
 try:
     # Get sys re
-    api_instance.on_prem_runtime_envs_system_get(name, version=version, extend=extend, history=history, successors=successors)
+    api_response = api_instance.on_prem_runtime_envs_system_get(name, version=version, extend=extend, history=history, successors=successors)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsSystemApi->on_prem_runtime_envs_system_get: %s\n" % e)
 ```
@@ -112,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -121,7 +122,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

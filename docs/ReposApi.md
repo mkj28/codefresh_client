@@ -124,7 +124,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repos_get**
-> repos_get(name, context=context)
+> object repos_get(name, context=context)
 
 Get
 
@@ -151,7 +151,8 @@ context = 'context_example' # str |  (optional)
 
 try:
     # Get
-    api_instance.repos_get(name, context=context)
+    api_response = api_instance.repos_get(name, context=context)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_get: %s\n" % e)
 ```
@@ -165,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -174,12 +175,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repos_get_settings**
-> repos_get_settings(repo_owner, repo_name)
+> object repos_get_settings(repo_owner, repo_name)
 
 Get settings
 
@@ -206,7 +207,8 @@ repo_name = 'repo_name_example' # str | repository name
 
 try:
     # Get settings
-    api_instance.repos_get_settings(repo_owner, repo_name)
+    api_response = api_instance.repos_get_settings(repo_owner, repo_name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_get_settings: %s\n" % e)
 ```
@@ -220,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -229,12 +231,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repos_git_get_repo**
-> repos_git_get_repo(owner, repo, context=context)
+> object repos_git_get_repo(owner, repo, context=context)
 
 Get git repo
 
@@ -262,7 +264,8 @@ context = 'context_example' # str |  (optional)
 
 try:
     # Get git repo
-    api_instance.repos_git_get_repo(owner, repo, context=context)
+    api_response = api_instance.repos_git_get_repo(owner, repo, context=context)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_git_get_repo: %s\n" % e)
 ```
@@ -277,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -286,12 +289,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repos_git_list**
-> repos_git_list(context=context)
+> object repos_git_list(context=context)
 
 List git repos (github, bitbucket, etc)
 
@@ -317,7 +320,8 @@ context = 'context_example' # str |  (optional)
 
 try:
     # List git repos (github, bitbucket, etc)
-    api_instance.repos_git_list(context=context)
+    api_response = api_instance.repos_git_list(context=context)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_git_list: %s\n" % e)
 ```
@@ -330,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -339,12 +343,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repos_list**
-> repos_list(context=context, thin=thin)
+> object repos_list(context=context, thin=thin)
 
 List
 
@@ -371,7 +375,8 @@ thin = 'thin_example' # str |  (optional)
 
 try:
     # List
-    api_instance.repos_list(context=context, thin=thin)
+    api_response = api_instance.repos_list(context=context, thin=thin)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_list: %s\n" % e)
 ```
@@ -385,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -394,7 +399,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

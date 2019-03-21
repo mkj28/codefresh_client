@@ -518,7 +518,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **accounts_list_accounts**
-> accounts_list_accounts()
+> object accounts_list_accounts()
 
 List accounts
 
@@ -545,7 +545,8 @@ api_instance = codefresh_client.AccountsApi(codefresh_client.ApiClient(configura
 
 try:
     # List accounts
-    api_instance.accounts_list_accounts()
+    api_response = api_instance.accounts_list_accounts()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountsApi->accounts_list_accounts: %s\n" % e)
 ```
@@ -555,7 +556,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -564,7 +565,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

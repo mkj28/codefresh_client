@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_repos_get**
-> helm_repos_get(name)
+> object helm_repos_get(name)
 
 Get
 
@@ -144,7 +144,8 @@ name = 'name_example' # str |
 
 try:
     # Get
-    api_instance.helm_repos_get(name)
+    api_response = api_instance.helm_repos_get(name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReposApi->helm_repos_get: %s\n" % e)
 ```
@@ -157,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -166,12 +167,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_repos_list**
-> helm_repos_list(query=query)
+> object helm_repos_list(query=query)
 
 List
 
@@ -197,7 +198,8 @@ query = 'query_example' # str |  (optional)
 
 try:
     # List
-    api_instance.helm_repos_list(query=query)
+    api_response = api_instance.helm_repos_list(query=query)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReposApi->helm_repos_list: %s\n" % e)
 ```
@@ -210,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -219,7 +221,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

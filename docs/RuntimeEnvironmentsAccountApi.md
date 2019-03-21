@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **on_prem_runtime_envs_account_list**
-> on_prem_runtime_envs_account_list(account, limit=limit, offset=offset, account_ids=account_ids)
+> object on_prem_runtime_envs_account_list(account, limit=limit, offset=offset, account_ids=account_ids)
 
 Get by account
 
@@ -38,7 +38,8 @@ account_ids = 'account_ids_example' # str |  (optional)
 
 try:
     # Get by account
-    api_instance.on_prem_runtime_envs_account_list(account, limit=limit, offset=offset, account_ids=account_ids)
+    api_response = api_instance.on_prem_runtime_envs_account_list(account, limit=limit, offset=offset, account_ids=account_ids)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsAccountApi->on_prem_runtime_envs_account_list: %s\n" % e)
 ```
@@ -54,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -63,7 +64,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

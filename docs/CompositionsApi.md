@@ -282,7 +282,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_list**
-> compositions_list()
+> object compositions_list()
 
 List
 
@@ -307,7 +307,8 @@ api_instance = codefresh_client.CompositionsApi(codefresh_client.ApiClient(confi
 
 try:
     # List
-    api_instance.compositions_list()
+    api_response = api_instance.compositions_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_list: %s\n" % e)
 ```
@@ -317,7 +318,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -326,7 +327,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

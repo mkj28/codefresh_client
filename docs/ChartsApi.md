@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **charts_list**
-> charts_list(repo)
+> object charts_list(repo)
 
 Get charts by repo
 
@@ -34,7 +34,8 @@ repo = 'repo_example' # str |
 
 try:
     # Get charts by repo
-    api_instance.charts_list(repo)
+    api_response = api_instance.charts_list(repo)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChartsApi->charts_list: %s\n" % e)
 ```
@@ -47,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -56,7 +57,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

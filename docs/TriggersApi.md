@@ -124,7 +124,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_get_event_triggers**
-> triggers_get_event_triggers(event)
+> object triggers_get_event_triggers(event)
 
 Get event triggers
 
@@ -150,7 +150,8 @@ event = 'event_example' # str |
 
 try:
     # Get event triggers
-    api_instance.triggers_get_event_triggers(event)
+    api_response = api_instance.triggers_get_event_triggers(event)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersApi->triggers_get_event_triggers: %s\n" % e)
 ```
@@ -163,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -172,12 +173,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_get_pipeline_triggers**
-> triggers_get_pipeline_triggers(pipeline)
+> object triggers_get_pipeline_triggers(pipeline)
 
 Get pipeline triggers
 
@@ -203,7 +204,8 @@ pipeline = 'pipeline_example' # str |
 
 try:
     # Get pipeline triggers
-    api_instance.triggers_get_pipeline_triggers(pipeline)
+    api_response = api_instance.triggers_get_pipeline_triggers(pipeline)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersApi->triggers_get_pipeline_triggers: %s\n" % e)
 ```
@@ -216,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -225,12 +227,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_list**
-> triggers_list()
+> object triggers_list()
 
 List
 
@@ -255,7 +257,8 @@ api_instance = codefresh_client.TriggersApi(codefresh_client.ApiClient(configura
 
 try:
     # List
-    api_instance.triggers_list()
+    api_response = api_instance.triggers_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersApi->triggers_list: %s\n" % e)
 ```
@@ -265,7 +268,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -274,7 +277,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

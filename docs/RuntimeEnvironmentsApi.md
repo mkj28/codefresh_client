@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **on_prem_runtime_envs_list**
-> on_prem_runtime_envs_list(limit=limit, offset=offset, account_ids=account_ids)
+> object on_prem_runtime_envs_list(limit=limit, offset=offset, account_ids=account_ids)
 
 List
 
@@ -42,7 +42,8 @@ account_ids = 'account_ids_example' # str |  (optional)
 
 try:
     # List
-    api_instance.on_prem_runtime_envs_list(limit=limit, offset=offset, account_ids=account_ids)
+    api_response = api_instance.on_prem_runtime_envs_list(limit=limit, offset=offset, account_ids=account_ids)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsApi->on_prem_runtime_envs_list: %s\n" % e)
 ```
@@ -57,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -66,12 +67,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **on_prem_runtime_envs_plan_get**
-> on_prem_runtime_envs_plan_get(plan, name, version=version, extend=extend, history=history, successors=successors)
+> object on_prem_runtime_envs_plan_get(plan, name, version=version, extend=extend, history=history, successors=successors)
 
 Get
 
@@ -102,7 +103,8 @@ successors = 'successors_example' # str |  (optional)
 
 try:
     # Get
-    api_instance.on_prem_runtime_envs_plan_get(plan, name, version=version, extend=extend, history=history, successors=successors)
+    api_response = api_instance.on_prem_runtime_envs_plan_get(plan, name, version=version, extend=extend, history=history, successors=successors)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsApi->on_prem_runtime_envs_plan_get: %s\n" % e)
 ```
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -129,7 +131,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -189,7 +191,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **runtime_envs_get**
-> runtime_envs_get(name, version=version, extend=extend, history=history)
+> object runtime_envs_get(name, version=version, extend=extend, history=history)
 
 Get
 
@@ -218,7 +220,8 @@ history = 'history_example' # str |  (optional)
 
 try:
     # Get
-    api_instance.runtime_envs_get(name, version=version, extend=extend, history=history)
+    api_response = api_instance.runtime_envs_get(name, version=version, extend=extend, history=history)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsApi->runtime_envs_get: %s\n" % e)
 ```
@@ -234,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -243,12 +246,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **runtime_envs_list**
-> runtime_envs_list(limit=limit, offset=offset)
+> object runtime_envs_list(limit=limit, offset=offset)
 
 List
 
@@ -275,7 +278,8 @@ offset = 'offset_example' # str |  (optional)
 
 try:
     # List
-    api_instance.runtime_envs_list(limit=limit, offset=offset)
+    api_response = api_instance.runtime_envs_list(limit=limit, offset=offset)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsApi->runtime_envs_list: %s\n" % e)
 ```
@@ -289,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -298,7 +302,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

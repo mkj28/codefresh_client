@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **envs_get**
-> envs_get(id)
+> object envs_get(id)
 
 Get
 
@@ -43,7 +43,8 @@ id = 'id_example' # str |
 
 try:
     # Get
-    api_instance.envs_get(id)
+    api_response = api_instance.envs_get(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_get: %s\n" % e)
 ```
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -65,12 +66,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_list**
-> envs_list()
+> object envs_list()
 
 List
 
@@ -95,7 +96,8 @@ api_instance = codefresh_client.EnvironmentsApi(codefresh_client.ApiClient(confi
 
 try:
     # List
-    api_instance.envs_list()
+    api_response = api_instance.envs_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_list: %s\n" % e)
 ```
@@ -105,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -114,7 +116,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -439,7 +441,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_terminate_all**
-> envs_terminate_all()
+> object envs_terminate_all()
 
 Terminate all
 
@@ -464,7 +466,8 @@ api_instance = codefresh_client.EnvironmentsApi(codefresh_client.ApiClient(confi
 
 try:
     # Terminate all
-    api_instance.envs_terminate_all()
+    api_response = api_instance.envs_terminate_all()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_terminate_all: %s\n" % e)
 ```
@@ -474,7 +477,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -483,7 +486,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

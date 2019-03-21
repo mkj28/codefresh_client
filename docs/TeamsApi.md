@@ -121,7 +121,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_list**
-> teams_list()
+> object teams_list()
 
 List
 
@@ -146,7 +146,8 @@ api_instance = codefresh_client.TeamsApi(codefresh_client.ApiClient(configuratio
 
 try:
     # List
-    api_instance.teams_list()
+    api_response = api_instance.teams_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->teams_list: %s\n" % e)
 ```
@@ -156,7 +157,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -165,12 +166,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_list_by_user**
-> teams_list_by_user(user_id)
+> object teams_list_by_user(user_id)
 
 List by user
 
@@ -196,7 +197,8 @@ user_id = 'user_id_example' # str |
 
 try:
     # List by user
-    api_instance.teams_list_by_user(user_id)
+    api_response = api_instance.teams_list_by_user(user_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->teams_list_by_user: %s\n" % e)
 ```
@@ -209,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -218,7 +220,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -278,7 +280,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_synchronize_client_with_group**
-> teams_synchronize_client_with_group(name, type, access_token=access_token)
+> object teams_synchronize_client_with_group(name, type, access_token=access_token)
 
 Synchronize client with group
 
@@ -306,7 +308,8 @@ access_token = 'access_token_example' # str |  (optional)
 
 try:
     # Synchronize client with group
-    api_instance.teams_synchronize_client_with_group(name, type, access_token=access_token)
+    api_response = api_instance.teams_synchronize_client_with_group(name, type, access_token=access_token)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->teams_synchronize_client_with_group: %s\n" % e)
 ```
@@ -321,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -330,7 +333,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

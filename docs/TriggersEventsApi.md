@@ -121,7 +121,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_events_get**
-> triggers_events_get(event)
+> object triggers_events_get(event)
 
 Get
 
@@ -147,7 +147,8 @@ event = 'event_example' # str |
 
 try:
     # Get
-    api_instance.triggers_events_get(event)
+    api_response = api_instance.triggers_events_get(event)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersEventsApi->triggers_events_get: %s\n" % e)
 ```
@@ -160,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -169,12 +170,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_events_list**
-> triggers_events_list(type=type, kind=kind, filter=filter, public=public)
+> object triggers_events_list(type=type, kind=kind, filter=filter, public=public)
 
 List
 
@@ -203,7 +204,8 @@ public = 'public_example' # str |  (optional)
 
 try:
     # List
-    api_instance.triggers_events_list(type=type, kind=kind, filter=filter, public=public)
+    api_response = api_instance.triggers_events_list(type=type, kind=kind, filter=filter, public=public)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersEventsApi->triggers_events_list: %s\n" % e)
 ```
@@ -219,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -228,7 +230,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

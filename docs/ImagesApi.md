@@ -279,7 +279,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_list**
-> images_list(limit=limit, offset=offset, metadata=metadata, tag=tag, type=type, branch=branch, image_display_name_regex=image_display_name_regex, select=select, sha=sha)
+> object images_list(limit=limit, offset=offset, metadata=metadata, tag=tag, type=type, branch=branch, image_display_name_regex=image_display_name_regex, select=select, sha=sha)
 
 List
 
@@ -313,7 +313,8 @@ sha = 'sha_example' # str |  (optional)
 
 try:
     # List
-    api_instance.images_list(limit=limit, offset=offset, metadata=metadata, tag=tag, type=type, branch=branch, image_display_name_regex=image_display_name_regex, select=select, sha=sha)
+    api_response = api_instance.images_list(limit=limit, offset=offset, metadata=metadata, tag=tag, type=type, branch=branch, image_display_name_regex=image_display_name_regex, select=select, sha=sha)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_list: %s\n" % e)
 ```
@@ -334,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -343,7 +344,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

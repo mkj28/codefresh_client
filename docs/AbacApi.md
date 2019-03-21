@@ -388,7 +388,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_list**
-> abac_rules_list()
+> object abac_rules_list()
 
 List rules
 
@@ -413,7 +413,8 @@ api_instance = codefresh_client.AbacApi(codefresh_client.ApiClient(configuration
 
 try:
     # List rules
-    api_instance.abac_rules_list()
+    api_response = api_instance.abac_rules_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_list: %s\n" % e)
 ```
@@ -423,7 +424,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -432,7 +433,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

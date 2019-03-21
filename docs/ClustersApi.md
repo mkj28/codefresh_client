@@ -64,7 +64,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clusters_list**
-> clusters_list()
+> object clusters_list()
 
 List
 
@@ -89,7 +89,8 @@ api_instance = codefresh_client.ClustersApi(codefresh_client.ApiClient(configura
 
 try:
     # List
-    api_instance.clusters_list()
+    api_response = api_instance.clusters_list()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ClustersApi->clusters_list: %s\n" % e)
 ```
@@ -99,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -108,7 +109,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
