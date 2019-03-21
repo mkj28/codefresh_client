@@ -176,7 +176,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pipelines_list**
-> pipelines_list(offset=offset, id=id, limit=limit, labels=labels)
+> str pipelines_list(offset=offset, id=id, limit=limit, labels=labels)
 
 List
 
@@ -205,7 +205,8 @@ labels = 'labels_example' # str |  (optional)
 
 try:
     # List
-    api_instance.pipelines_list(offset=offset, id=id, limit=limit, labels=labels)
+    api_response = api_instance.pipelines_list(offset=offset, id=id, limit=limit, labels=labels)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->pipelines_list: %s\n" % e)
 ```
@@ -221,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 
@@ -230,7 +231,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

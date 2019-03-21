@@ -226,14 +226,14 @@ Class | Method | HTTP request | Description
 *TriggersTypesApi* | [**triggers_types_get**](docs/TriggersTypesApi.md#triggers_types_get) | **GET** /hermes/types/{type}/{kind} | Get
 *TriggersTypesApi* | [**triggers_types_list**](docs/TriggersTypesApi.md#triggers_types_list) | **GET** /hermes/types | List
 *ChartsApi* | [**charts_list**](docs/ChartsApi.md#charts_list) | **GET** /charts/{repo} | Get charts by repo
-*DefaultApi* | [**accounts_account_id_user_id_resend_invite_post**](docs/DefaultApi.md#accounts_account_id_user_id_resend_invite_post) | **POST** /accounts/{accountId}/{userId}/resendInvite |
-*DefaultApi* | [**admin_runtime_environments_account_modify_runtime_environment_name_delete**](docs/DefaultApi.md#admin_runtime_environments_account_modify_runtime_environment_name_delete) | **DELETE** /admin/runtime-environments/account/modify/{runtimeEnvironmentName} |
-*DefaultApi* | [**admin_runtime_environments_account_modify_runtime_environment_name_put**](docs/DefaultApi.md#admin_runtime_environments_account_modify_runtime_environment_name_put) | **PUT** /admin/runtime-environments/account/modify/{runtimeEnvironmentName} |
-*DefaultApi* | [**registries_registry_id_default_patch**](docs/DefaultApi.md#registries_registry_id_default_patch) | **PATCH** /registries/{registryId}/default |
-*DefaultApi* | [**registries_registry_id_patch**](docs/DefaultApi.md#registries_registry_id_patch) | **PATCH** /registries/{registryId} |
-*DefaultApi* | [**user_onboarding_status_account_post**](docs/DefaultApi.md#user_onboarding_status_account_post) | **POST** /user/onboarding-status/account |
-*DefaultApi* | [**user_onboarding_status_user_post**](docs/DefaultApi.md#user_onboarding_status_user_post) | **POST** /user/onboarding-status/user |
-*DefaultApi* | [**user_post**](docs/DefaultApi.md#user_post) | **POST** /user |
+*DefaultApi* | [**accounts_account_id_user_id_resend_invite_post**](docs/DefaultApi.md#accounts_account_id_user_id_resend_invite_post) | **POST** /accounts/{accountId}/{userId}/resendInvite | 
+*DefaultApi* | [**admin_runtime_environments_account_modify_runtime_environment_name_delete**](docs/DefaultApi.md#admin_runtime_environments_account_modify_runtime_environment_name_delete) | **DELETE** /admin/runtime-environments/account/modify/{runtimeEnvironmentName} | 
+*DefaultApi* | [**admin_runtime_environments_account_modify_runtime_environment_name_put**](docs/DefaultApi.md#admin_runtime_environments_account_modify_runtime_environment_name_put) | **PUT** /admin/runtime-environments/account/modify/{runtimeEnvironmentName} | 
+*DefaultApi* | [**registries_registry_id_default_patch**](docs/DefaultApi.md#registries_registry_id_default_patch) | **PATCH** /registries/{registryId}/default | 
+*DefaultApi* | [**registries_registry_id_patch**](docs/DefaultApi.md#registries_registry_id_patch) | **PATCH** /registries/{registryId} | 
+*DefaultApi* | [**user_onboarding_status_account_post**](docs/DefaultApi.md#user_onboarding_status_account_post) | **POST** /user/onboarding-status/account | 
+*DefaultApi* | [**user_onboarding_status_user_post**](docs/DefaultApi.md#user_onboarding_status_user_post) | **POST** /user/onboarding-status/user | 
+*DefaultApi* | [**user_post**](docs/DefaultApi.md#user_post) | **POST** /user | 
 
 
 ## Documentation For Models
