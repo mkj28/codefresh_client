@@ -176,7 +176,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pipelines_list**
-> str pipelines_list(offset=offset, id=id, limit=limit, labels=labels)
+> object pipelines_list(offset=offset, id=id, limit=limit, labels=labels)
 
 List
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+**object**
 
 ### Authorization
 
