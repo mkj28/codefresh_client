@@ -30,7 +30,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ChartsApi(codefresh_client.ApiClient(configuration))
-repo = 'repo_example' # str | 
+repo = 'repo_example' # str | Repo
 
 try:
     # Get charts by repo
@@ -44,7 +44,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**|  | 
+ **repo** | **str**| Repo | 
 
 ### Return type
 

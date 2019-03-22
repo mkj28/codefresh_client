@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_sections_reorder**
-> helm_sections_reorder(inline_object19=inline_object19)
+> object helm_sections_reorder(inline_object19=inline_object19)
 
 Reorder
 
@@ -424,7 +424,8 @@ inline_object19 = codefresh_client.InlineObject19() # InlineObject19 |  (optiona
 
 try:
     # Reorder
-    api_instance.helm_sections_reorder(inline_object19=inline_object19)
+    api_response = api_instance.helm_sections_reorder(inline_object19=inline_object19)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmSectionsApi->helm_sections_reorder: %s\n" % e)
 ```
@@ -437,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 

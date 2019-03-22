@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **progress_download**
-> progress_download(id)
+> object progress_download(id)
 
 Download
 
@@ -36,7 +36,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Download
-    api_instance.progress_download(id)
+    api_response = api_instance.progress_download(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProgressApi->progress_download: %s\n" % e)
 ```
@@ -49,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -58,12 +59,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **progress_get**
-> progress_get(id)
+> object progress_get(id)
 
 Get
 
@@ -89,7 +90,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Get
-    api_instance.progress_get(id)
+    api_response = api_instance.progress_get(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProgressApi->progress_get: %s\n" % e)
 ```
@@ -102,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -111,12 +113,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **progress_terminate**
-> progress_terminate(id)
+> object progress_terminate(id)
 
 Terminate
 
@@ -142,7 +144,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Terminate
-    api_instance.progress_terminate(id)
+    api_response = api_instance.progress_terminate(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProgressApi->progress_terminate: %s\n" % e)
 ```
@@ -155,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -164,7 +167,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

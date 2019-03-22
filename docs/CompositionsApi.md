@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **compositions_create**
-> compositions_create(inline_object10=inline_object10)
+> object compositions_create(inline_object10=inline_object10)
 
 Create
 
@@ -41,7 +41,8 @@ inline_object10 = codefresh_client.InlineObject10() # InlineObject10 |  (optiona
 
 try:
     # Create
-    api_instance.compositions_create(inline_object10=inline_object10)
+    api_response = api_instance.compositions_create(inline_object10=inline_object10)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_create: %s\n" % e)
 ```
@@ -54,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -63,12 +64,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_delete**
-> compositions_delete(id)
+> object compositions_delete(id)
 
 Delete
 
@@ -94,7 +95,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Delete
-    api_instance.compositions_delete(id)
+    api_response = api_instance.compositions_delete(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_delete: %s\n" % e)
 ```
@@ -107,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -116,12 +118,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_duplicate**
-> compositions_duplicate(id)
+> object compositions_duplicate(id)
 
 Duplicate
 
@@ -147,7 +149,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Duplicate
-    api_instance.compositions_duplicate(id)
+    api_response = api_instance.compositions_duplicate(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_duplicate: %s\n" % e)
 ```
@@ -160,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -169,12 +172,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_get**
-> compositions_get(id)
+> object compositions_get(id)
 
 Get
 
@@ -200,7 +203,8 @@ id = 'id_example' # str | id or name of a composition
 
 try:
     # Get
-    api_instance.compositions_get(id)
+    api_response = api_instance.compositions_get(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_get: %s\n" % e)
 ```
@@ -213,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -222,12 +226,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_launch**
-> compositions_launch(id, inline_object11=inline_object11)
+> object compositions_launch(id, inline_object11=inline_object11)
 
 Launch
 
@@ -254,7 +258,8 @@ inline_object11 = codefresh_client.InlineObject11() # InlineObject11 |  (optiona
 
 try:
     # Launch
-    api_instance.compositions_launch(id, inline_object11=inline_object11)
+    api_response = api_instance.compositions_launch(id, inline_object11=inline_object11)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_launch: %s\n" % e)
 ```
@@ -268,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -277,7 +282,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -332,7 +337,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_patch**
-> compositions_patch(id, unknown_base_type=unknown_base_type)
+> object compositions_patch(id, unknown_base_type=unknown_base_type)
 
 Patch
 
@@ -354,12 +359,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.CompositionsApi(codefresh_client.ApiClient(configuration))
-id = 'id_example' # str | 
+id = 'id_example' # str | Id
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Patch
-    api_instance.compositions_patch(id, unknown_base_type=unknown_base_type)
+    api_response = api_instance.compositions_patch(id, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_patch: %s\n" % e)
 ```
@@ -368,12 +374,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **id** | **str**| Id | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -382,12 +388,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compositions_update**
-> compositions_update(id, inline_object12=inline_object12)
+> object compositions_update(id, inline_object12=inline_object12)
 
 Update
 
@@ -414,7 +420,8 @@ inline_object12 = codefresh_client.InlineObject12() # InlineObject12 |  (optiona
 
 try:
     # Update
-    api_instance.compositions_update(id, inline_object12=inline_object12)
+    api_response = api_instance.compositions_update(id, inline_object12=inline_object12)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CompositionsApi->compositions_update: %s\n" % e)
 ```
@@ -428,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -437,7 +444,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

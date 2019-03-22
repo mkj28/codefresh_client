@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **teams_add_user**
-> teams_add_user(team_id, user_id)
+> object teams_add_user(team_id, user_id)
 
 Add user
 
@@ -40,7 +40,8 @@ user_id = 'user_id_example' # str | The user id for assign
 
 try:
     # Add user
-    api_instance.teams_add_user(team_id, user_id)
+    api_response = api_instance.teams_add_user(team_id, user_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->teams_add_user: %s\n" % e)
 ```
@@ -54,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -63,12 +64,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_create**
-> teams_create(inline_object32=inline_object32)
+> object teams_create(inline_object32=inline_object32)
 
 Create
 
@@ -94,7 +95,8 @@ inline_object32 = codefresh_client.InlineObject32() # InlineObject32 |  (optiona
 
 try:
     # Create
-    api_instance.teams_create(inline_object32=inline_object32)
+    api_response = api_instance.teams_create(inline_object32=inline_object32)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->teams_create: %s\n" % e)
 ```
@@ -107,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -116,7 +118,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -193,7 +195,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TeamsApi(codefresh_client.ApiClient(configuration))
-user_id = 'user_id_example' # str | 
+user_id = 'user_id_example' # str | User id
 
 try:
     # List by user
@@ -207,7 +209,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**|  | 
+ **user_id** | **str**| User id | 
 
 ### Return type
 
@@ -225,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **teams_remove_user**
-> teams_remove_user(team_id, user_id)
+> object teams_remove_user(team_id, user_id)
 
 Remove user
 
@@ -252,7 +254,8 @@ user_id = 'user_id_example' # str | The user id for assign
 
 try:
     # Remove user
-    api_instance.teams_remove_user(team_id, user_id)
+    api_response = api_instance.teams_remove_user(team_id, user_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TeamsApi->teams_remove_user: %s\n" % e)
 ```
@@ -266,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -275,7 +278,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -302,9 +305,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TeamsApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
-type = 'type_example' # str | 
-access_token = 'access_token_example' # str |  (optional)
+name = 'name_example' # str | Name
+type = 'type_example' # str | Type
+access_token = 'access_token_example' # str | Access token (optional)
 
 try:
     # Synchronize client with group
@@ -318,9 +321,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
- **type** | **str**|  | 
- **access_token** | **str**|  | [optional] 
+ **name** | **str**| Name | 
+ **type** | **str**| Type | 
+ **access_token** | **str**| Access token | [optional] 
 
 ### Return type
 

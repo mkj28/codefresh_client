@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **pipelines_create**
-> pipelines_create(unknown_base_type=unknown_base_type)
+> object pipelines_create(unknown_base_type=unknown_base_type)
 
 Create
 
@@ -41,7 +41,8 @@ unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  
 
 try:
     # Create
-    api_instance.pipelines_create(unknown_base_type=unknown_base_type)
+    api_response = api_instance.pipelines_create(unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->pipelines_create: %s\n" % e)
 ```
@@ -54,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -63,12 +64,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pipelines_delete**
-> pipelines_delete(name)
+> object pipelines_delete(name)
 
 Delete
 
@@ -94,7 +95,8 @@ name = 'name_example' # str | Name of pipeline
 
 try:
     # Delete
-    api_instance.pipelines_delete(name)
+    api_response = api_instance.pipelines_delete(name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->pipelines_delete: %s\n" % e)
 ```
@@ -107,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -116,7 +118,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -144,7 +146,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = codefresh_client.PipelinesApi(codefresh_client.ApiClient(configuration))
 name = 'name_example' # str | Name of pipeline
-decrypt_variables = 'decrypt_variables_example' # str |  (optional)
+decrypt_variables = 'decrypt_variables_example' # str | Decrypt variables (optional)
 
 try:
     # Get
@@ -159,7 +161,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Name of pipeline | 
- **decrypt_variables** | **str**|  | [optional] 
+ **decrypt_variables** | **str**| Decrypt variables | [optional] 
 
 ### Return type
 
@@ -199,10 +201,10 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.PipelinesApi(codefresh_client.ApiClient(configuration))
-offset = 56 # int |  (optional)
-id = 'id_example' # str |  (optional)
-limit = 'limit_example' # str |  (optional)
-labels = 'labels_example' # str |  (optional)
+offset = 56 # int | Offset (optional)
+id = 'id_example' # str | Id (optional)
+limit = 'limit_example' # str | Limit (optional)
+labels = 'labels_example' # str | Labels (optional)
 
 try:
     # List
@@ -216,10 +218,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **int**|  | [optional] 
- **id** | **str**|  | [optional] 
- **limit** | **str**|  | [optional] 
- **labels** | **str**|  | [optional] 
+ **offset** | **int**| Offset | [optional] 
+ **id** | **str**| Id | [optional] 
+ **limit** | **str**| Limit | [optional] 
+ **labels** | **str**| Labels | [optional] 
 
 ### Return type
 
@@ -293,7 +295,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pipelines_run**
-> pipelines_run(name, unknown_base_type=unknown_base_type)
+> object pipelines_run(name, unknown_base_type=unknown_base_type)
 
 Run
 
@@ -315,12 +317,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.PipelinesApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
+name = 'name_example' # str | Name
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Run
-    api_instance.pipelines_run(name, unknown_base_type=unknown_base_type)
+    api_response = api_instance.pipelines_run(name, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->pipelines_run: %s\n" % e)
 ```
@@ -329,12 +332,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
+ **name** | **str**| Name | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -343,12 +346,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pipelines_validate_yaml**
-> pipelines_validate_yaml(unknown_base_type=unknown_base_type)
+> object pipelines_validate_yaml(unknown_base_type=unknown_base_type)
 
 Validate yaml
 
@@ -374,7 +377,8 @@ unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  
 
 try:
     # Validate yaml
-    api_instance.pipelines_validate_yaml(unknown_base_type=unknown_base_type)
+    api_response = api_instance.pipelines_validate_yaml(unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->pipelines_validate_yaml: %s\n" % e)
 ```
@@ -387,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -396,12 +400,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **runtime_launch**
-> runtime_launch(inline_object30=inline_object30)
+> object runtime_launch(inline_object30=inline_object30)
 
 Launch
 
@@ -427,7 +431,8 @@ inline_object30 = codefresh_client.InlineObject30() # InlineObject30 |  (optiona
 
 try:
     # Launch
-    api_instance.runtime_launch(inline_object30=inline_object30)
+    api_response = api_instance.runtime_launch(inline_object30=inline_object30)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling PipelinesApi->runtime_launch: %s\n" % e)
 ```
@@ -440,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -449,7 +454,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

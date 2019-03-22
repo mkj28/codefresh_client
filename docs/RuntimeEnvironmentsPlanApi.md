@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **on_prem_runtime_envs_plan_delete**
-> on_prem_runtime_envs_plan_delete(plan, name, force=force)
+> object on_prem_runtime_envs_plan_delete(plan, runtime_environment_name, force=force)
 
 Delete
 
@@ -32,13 +32,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.RuntimeEnvironmentsPlanApi(codefresh_client.ApiClient(configuration))
-plan = 'plan_example' # str | 
-name = 'name_example' # str | 
-force = 'force_example' # str |  (optional)
+plan = 'plan_example' # str | Plan
+runtime_environment_name = 'runtime_environment_name_example' # str | Runtime environment name
+force = 'force_example' # str | Force (optional)
 
 try:
     # Delete
-    api_instance.on_prem_runtime_envs_plan_delete(plan, name, force=force)
+    api_response = api_instance.on_prem_runtime_envs_plan_delete(plan, runtime_environment_name, force=force)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsPlanApi->on_prem_runtime_envs_plan_delete: %s\n" % e)
 ```
@@ -47,13 +48,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **plan** | **str**|  | 
- **name** | **str**|  | 
- **force** | **str**|  | [optional] 
+ **plan** | **str**| Plan | 
+ **runtime_environment_name** | **str**| Runtime environment name | 
+ **force** | **str**| Force | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -62,12 +63,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **on_prem_runtime_envs_plan_set_default**
-> on_prem_runtime_envs_plan_set_default(plan, name)
+> object on_prem_runtime_envs_plan_set_default(plan, runtime_environment_name)
 
 Set default
 
@@ -89,12 +90,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.RuntimeEnvironmentsPlanApi(codefresh_client.ApiClient(configuration))
-plan = 'plan_example' # str | 
-name = 'name_example' # str | 
+plan = 'plan_example' # str | Plan
+runtime_environment_name = 'runtime_environment_name_example' # str | Runtime environment name
 
 try:
     # Set default
-    api_instance.on_prem_runtime_envs_plan_set_default(plan, name)
+    api_response = api_instance.on_prem_runtime_envs_plan_set_default(plan, runtime_environment_name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsPlanApi->on_prem_runtime_envs_plan_set_default: %s\n" % e)
 ```
@@ -103,12 +105,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **plan** | **str**|  | 
- **name** | **str**|  | 
+ **plan** | **str**| Plan | 
+ **runtime_environment_name** | **str**| Runtime environment name | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -117,12 +119,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **on_prem_runtime_envs_plan_update**
-> on_prem_runtime_envs_plan_update(plan, name, extend=extend, description=description, unknown_base_type=unknown_base_type)
+> object on_prem_runtime_envs_plan_update(plan, runtime_environment_name, extend=extend, description=description, unknown_base_type=unknown_base_type)
 
 Update
 
@@ -144,15 +146,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.RuntimeEnvironmentsPlanApi(codefresh_client.ApiClient(configuration))
-plan = 'plan_example' # str | 
-name = 'name_example' # str | 
-extend = 'extend_example' # str |  (optional)
-description = 'description_example' # str |  (optional)
+plan = 'plan_example' # str | Plan
+runtime_environment_name = 'runtime_environment_name_example' # str | Runtime environment name
+extend = 'extend_example' # str | Extend (optional)
+description = 'description_example' # str | Description (optional)
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Update
-    api_instance.on_prem_runtime_envs_plan_update(plan, name, extend=extend, description=description, unknown_base_type=unknown_base_type)
+    api_response = api_instance.on_prem_runtime_envs_plan_update(plan, runtime_environment_name, extend=extend, description=description, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsPlanApi->on_prem_runtime_envs_plan_update: %s\n" % e)
 ```
@@ -161,15 +164,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **plan** | **str**|  | 
- **name** | **str**|  | 
- **extend** | **str**|  | [optional] 
- **description** | **str**|  | [optional] 
+ **plan** | **str**| Plan | 
+ **runtime_environment_name** | **str**| Runtime environment name | 
+ **extend** | **str**| Extend | [optional] 
+ **description** | **str**| Description | [optional] 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -178,7 +181,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

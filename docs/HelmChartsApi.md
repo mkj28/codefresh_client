@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **helm_charts_install**
-> helm_charts_install(selector, tiller_namespace, unknown_base_type=unknown_base_type)
+> object helm_charts_install(selector, tiller_namespace, unknown_base_type=unknown_base_type)
 
 Install
 
@@ -31,13 +31,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmChartsApi(codefresh_client.ApiClient(configuration))
-selector = 'selector_example' # str | 
-tiller_namespace = 'tiller_namespace_example' # str | 
+selector = 'selector_example' # str | Selector
+tiller_namespace = 'tiller_namespace_example' # str | Tiller namespace
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Install
-    api_instance.helm_charts_install(selector, tiller_namespace, unknown_base_type=unknown_base_type)
+    api_response = api_instance.helm_charts_install(selector, tiller_namespace, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmChartsApi->helm_charts_install: %s\n" % e)
 ```
@@ -46,13 +47,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **selector** | **str**|  | 
- **tiller_namespace** | **str**|  | 
+ **selector** | **str**| Selector | 
+ **tiller_namespace** | **str**| Tiller namespace | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -61,12 +62,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_charts_promote**
-> helm_charts_promote(tiller_namespace, selector=selector, unknown_base_type=unknown_base_type)
+> object helm_charts_promote(tiller_namespace, selector=selector, unknown_base_type=unknown_base_type)
 
 Promote
 
@@ -88,13 +89,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmChartsApi(codefresh_client.ApiClient(configuration))
-tiller_namespace = 'tiller_namespace_example' # str | 
-selector = 'selector_example' # str |  (optional)
+tiller_namespace = 'tiller_namespace_example' # str | Tiller namespace
+selector = 'selector_example' # str | Selector (optional)
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Promote
-    api_instance.helm_charts_promote(tiller_namespace, selector=selector, unknown_base_type=unknown_base_type)
+    api_response = api_instance.helm_charts_promote(tiller_namespace, selector=selector, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmChartsApi->helm_charts_promote: %s\n" % e)
 ```
@@ -103,13 +105,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tiller_namespace** | **str**|  | 
- **selector** | **str**|  | [optional] 
+ **tiller_namespace** | **str**| Tiller namespace | 
+ **selector** | **str**| Selector | [optional] 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -118,7 +120,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

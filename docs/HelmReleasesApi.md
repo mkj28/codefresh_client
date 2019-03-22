@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **helm_releases_delete**
-> helm_releases_delete(release_name, selector, tiller_namespace, unknown_base_type=unknown_base_type)
+> object helm_releases_delete(release_name, selector, tiller_namespace, unknown_base_type=unknown_base_type)
 
 Delete
 
@@ -31,14 +31,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmReleasesApi(codefresh_client.ApiClient(configuration))
-release_name = 'release_name_example' # str | 
-selector = 'selector_example' # str | 
-tiller_namespace = 'tiller_namespace_example' # str | 
+release_name = 'release_name_example' # str | Release name
+selector = 'selector_example' # str | Selector
+tiller_namespace = 'tiller_namespace_example' # str | Tiller namespace
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Delete
-    api_instance.helm_releases_delete(release_name, selector, tiller_namespace, unknown_base_type=unknown_base_type)
+    api_response = api_instance.helm_releases_delete(release_name, selector, tiller_namespace, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReleasesApi->helm_releases_delete: %s\n" % e)
 ```
@@ -47,14 +48,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **release_name** | **str**|  | 
- **selector** | **str**|  | 
- **tiller_namespace** | **str**|  | 
+ **release_name** | **str**| Release name | 
+ **selector** | **str**| Selector | 
+ **tiller_namespace** | **str**| Tiller namespace | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -63,12 +64,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_releases_test**
-> helm_releases_test(release_name, selector=selector, unknown_base_type=unknown_base_type)
+> object helm_releases_test(release_name, selector=selector, unknown_base_type=unknown_base_type)
 
 Test
 
@@ -90,13 +91,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmReleasesApi(codefresh_client.ApiClient(configuration))
-release_name = 'release_name_example' # str | 
-selector = 'selector_example' # str |  (optional)
+release_name = 'release_name_example' # str | Release name
+selector = 'selector_example' # str | Selector (optional)
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Test
-    api_instance.helm_releases_test(release_name, selector=selector, unknown_base_type=unknown_base_type)
+    api_response = api_instance.helm_releases_test(release_name, selector=selector, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReleasesApi->helm_releases_test: %s\n" % e)
 ```
@@ -105,13 +107,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **release_name** | **str**|  | 
- **selector** | **str**|  | [optional] 
+ **release_name** | **str**| Release name | 
+ **selector** | **str**| Selector | [optional] 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -120,7 +122,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

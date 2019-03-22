@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **on_prem_runtime_envs_system_delete**
-> on_prem_runtime_envs_system_delete(name, force=force)
+> object on_prem_runtime_envs_system_delete(runtime_environment_name, force=force)
 
 Delete sys re
 
@@ -32,12 +32,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.RuntimeEnvironmentsSystemApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
-force = 'force_example' # str |  (optional)
+runtime_environment_name = 'runtime_environment_name_example' # str | Runtime environment name
+force = 'force_example' # str | Force (optional)
 
 try:
     # Delete sys re
-    api_instance.on_prem_runtime_envs_system_delete(name, force=force)
+    api_response = api_instance.on_prem_runtime_envs_system_delete(runtime_environment_name, force=force)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsSystemApi->on_prem_runtime_envs_system_delete: %s\n" % e)
 ```
@@ -46,12 +47,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
- **force** | **str**|  | [optional] 
+ **runtime_environment_name** | **str**| Runtime environment name | 
+ **force** | **str**| Force | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -60,12 +61,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **on_prem_runtime_envs_system_get**
-> object on_prem_runtime_envs_system_get(name, version=version, extend=extend, history=history, successors=successors)
+> object on_prem_runtime_envs_system_get(runtime_environment_name, version=version, extend=extend, history=history, successors=successors)
 
 Get sys re
 
@@ -87,15 +88,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.RuntimeEnvironmentsSystemApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
-version = 'version_example' # str |  (optional)
-extend = 'extend_example' # str |  (optional)
-history = 'history_example' # str |  (optional)
-successors = 'successors_example' # str |  (optional)
+runtime_environment_name = 'runtime_environment_name_example' # str | Runtime environment name
+version = 'version_example' # str | Version (optional)
+extend = 'extend_example' # str | Extend (optional)
+history = 'history_example' # str | History (optional)
+successors = 'successors_example' # str | Successors (optional)
 
 try:
     # Get sys re
-    api_response = api_instance.on_prem_runtime_envs_system_get(name, version=version, extend=extend, history=history, successors=successors)
+    api_response = api_instance.on_prem_runtime_envs_system_get(runtime_environment_name, version=version, extend=extend, history=history, successors=successors)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsSystemApi->on_prem_runtime_envs_system_get: %s\n" % e)
@@ -105,11 +106,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
- **version** | **str**|  | [optional] 
- **extend** | **str**|  | [optional] 
- **history** | **str**|  | [optional] 
- **successors** | **str**|  | [optional] 
+ **runtime_environment_name** | **str**| Runtime environment name | 
+ **version** | **str**| Version | [optional] 
+ **extend** | **str**| Extend | [optional] 
+ **history** | **str**| History | [optional] 
+ **successors** | **str**| Successors | [optional] 
 
 ### Return type
 
@@ -127,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **on_prem_runtime_envs_system_update**
-> on_prem_runtime_envs_system_update(name, extend=extend, description=description, unknown_base_type=unknown_base_type)
+> object on_prem_runtime_envs_system_update(runtime_environment_name, extend=extend, description=description, unknown_base_type=unknown_base_type)
 
 Update sys re
 
@@ -149,14 +150,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.RuntimeEnvironmentsSystemApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
-extend = 'extend_example' # str |  (optional)
-description = 'description_example' # str |  (optional)
+runtime_environment_name = 'runtime_environment_name_example' # str | Runtime environment name
+extend = 'extend_example' # str | Extend or not (optional)
+description = 'description_example' # str | Description (optional)
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Update sys re
-    api_instance.on_prem_runtime_envs_system_update(name, extend=extend, description=description, unknown_base_type=unknown_base_type)
+    api_response = api_instance.on_prem_runtime_envs_system_update(runtime_environment_name, extend=extend, description=description, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling RuntimeEnvironmentsSystemApi->on_prem_runtime_envs_system_update: %s\n" % e)
 ```
@@ -165,14 +167,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
- **extend** | **str**|  | [optional] 
- **description** | **str**|  | [optional] 
+ **runtime_environment_name** | **str**| Runtime environment name | 
+ **extend** | **str**| Extend or not | [optional] 
+ **description** | **str**| Description | [optional] 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -181,7 +183,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

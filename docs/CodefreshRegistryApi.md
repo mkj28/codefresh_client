@@ -6,13 +6,15 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**codefresh_registry_generate_cfcr_token**](CodefreshRegistryApi.md#codefresh_registry_generate_cfcr_token) | **POST** /registry/auth/token | Generate cfcr token
 [**registries_create**](CodefreshRegistryApi.md#registries_create) | **POST** /registries | Create
+[**registries_default_patch**](CodefreshRegistryApi.md#registries_default_patch) | **PATCH** /registries/{registryId}/default | Patch default
 [**registries_delete**](CodefreshRegistryApi.md#registries_delete) | **DELETE** /registries/{registryId} | Delete
 [**registries_list**](CodefreshRegistryApi.md#registries_list) | **GET** /registries | List registries
+[**registries_patch**](CodefreshRegistryApi.md#registries_patch) | **PATCH** /registries/{registryId} | Patch
 [**registries_test**](CodefreshRegistryApi.md#registries_test) | **POST** /registries/test | Test
 
 
 # **codefresh_registry_generate_cfcr_token**
-> codefresh_registry_generate_cfcr_token(inline_object26=inline_object26)
+> object codefresh_registry_generate_cfcr_token(inline_object26=inline_object26)
 
 Generate cfcr token
 
@@ -38,7 +40,8 @@ inline_object26 = codefresh_client.InlineObject26() # InlineObject26 |  (optiona
 
 try:
     # Generate cfcr token
-    api_instance.codefresh_registry_generate_cfcr_token(inline_object26=inline_object26)
+    api_response = api_instance.codefresh_registry_generate_cfcr_token(inline_object26=inline_object26)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CodefreshRegistryApi->codefresh_registry_generate_cfcr_token: %s\n" % e)
 ```
@@ -51,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -60,12 +63,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registries_create**
-> registries_create(inline_object27=inline_object27)
+> object registries_create(inline_object27=inline_object27)
 
 Create
 
@@ -91,7 +94,8 @@ inline_object27 = codefresh_client.InlineObject27() # InlineObject27 |  (optiona
 
 try:
     # Create
-    api_instance.registries_create(inline_object27=inline_object27)
+    api_response = api_instance.registries_create(inline_object27=inline_object27)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CodefreshRegistryApi->registries_create: %s\n" % e)
 ```
@@ -104,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -113,12 +117,66 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **registries_default_patch**
+> object registries_default_patch(registry_id)
+
+Patch default
+
+### Example
+
+* Api Key Authentication (apiKey): 
+```python
+from __future__ import print_function
+import time
+import codefresh_client
+from codefresh_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apiKey
+configuration = codefresh_client.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = codefresh_client.CodefreshRegistryApi(codefresh_client.ApiClient(configuration))
+registry_id = 'registry_id_example' # str | id of an object
+
+try:
+    # Patch default
+    api_response = api_instance.registries_default_patch(registry_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CodefreshRegistryApi->registries_default_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registry_id** | **str**| id of an object | 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **registries_delete**
-> registries_delete(id)
+> object registries_delete(registry_id)
 
 Delete
 
@@ -140,11 +198,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.CodefreshRegistryApi(codefresh_client.ApiClient(configuration))
-id = 'id_example' # str | id of an object
+registry_id = 'registry_id_example' # str | id of an object
 
 try:
     # Delete
-    api_instance.registries_delete(id)
+    api_response = api_instance.registries_delete(registry_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CodefreshRegistryApi->registries_delete: %s\n" % e)
 ```
@@ -153,11 +212,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| id of an object | 
+ **registry_id** | **str**| id of an object | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -166,7 +225,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -220,8 +279,64 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **registries_patch**
+> object registries_patch(registry_id, inline_object28=inline_object28)
+
+Patch
+
+### Example
+
+* Api Key Authentication (apiKey): 
+```python
+from __future__ import print_function
+import time
+import codefresh_client
+from codefresh_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apiKey
+configuration = codefresh_client.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = codefresh_client.CodefreshRegistryApi(codefresh_client.ApiClient(configuration))
+registry_id = 'registry_id_example' # str | id of an object
+inline_object28 = codefresh_client.InlineObject28() # InlineObject28 |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.registries_patch(registry_id, inline_object28=inline_object28)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CodefreshRegistryApi->registries_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **registry_id** | **str**| id of an object | 
+ **inline_object28** | [**InlineObject28**](InlineObject28.md)|  | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **registries_test**
-> registries_test(inline_object29=inline_object29)
+> object registries_test(inline_object29=inline_object29)
 
 Test
 
@@ -247,7 +362,8 @@ inline_object29 = codefresh_client.InlineObject29() # InlineObject29 |  (optiona
 
 try:
     # Test
-    api_instance.registries_test(inline_object29=inline_object29)
+    api_response = api_instance.registries_test(inline_object29=inline_object29)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CodefreshRegistryApi->registries_test: %s\n" % e)
 ```
@@ -260,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -269,7 +385,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

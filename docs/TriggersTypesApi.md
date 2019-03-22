@@ -31,8 +31,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TriggersTypesApi(codefresh_client.ApiClient(configuration))
-type = 'type_example' # str | 
-kind = 'kind_example' # str | 
+type = 'type_example' # str | Type
+kind = 'kind_example' # str | Kind
 
 try:
     # Get
@@ -46,8 +46,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**|  | 
- **kind** | **str**|  | 
+ **type** | **str**| Type | 
+ **kind** | **str**| Kind | 
 
 ### Return type
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **workflows_get**
-> workflows_get(id)
+> object workflows_get(id)
 
 Get
 
@@ -36,7 +36,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Get
-    api_instance.workflows_get(id)
+    api_response = api_instance.workflows_get(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->workflows_get: %s\n" % e)
 ```
@@ -49,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -58,12 +59,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **workflows_list**
-> workflows_list(limit=limit, page=page, status=status, trigger=trigger, pipeline=pipeline)
+> object workflows_list(limit=limit, page=page, status=status, trigger=trigger, pipeline=pipeline)
 
 List
 
@@ -85,15 +86,16 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.BuildsApi(codefresh_client.ApiClient(configuration))
-limit = 56 # int |  (optional)
-page = 56 # int |  (optional)
-status = 'status_example' # str |  (optional)
-trigger = 'trigger_example' # str |  (optional)
-pipeline = 'pipeline_example' # str |  (optional)
+limit = 56 # int | Limit (optional)
+page = 56 # int | Page (optional)
+status = 'status_example' # str | Status (optional)
+trigger = 'trigger_example' # str | Trigger (optional)
+pipeline = 'pipeline_example' # str | Pipeline (optional)
 
 try:
     # List
-    api_instance.workflows_list(limit=limit, page=page, status=status, trigger=trigger, pipeline=pipeline)
+    api_response = api_instance.workflows_list(limit=limit, page=page, status=status, trigger=trigger, pipeline=pipeline)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->workflows_list: %s\n" % e)
 ```
@@ -102,15 +104,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**|  | [optional] 
- **page** | **int**|  | [optional] 
- **status** | **str**|  | [optional] 
- **trigger** | **str**|  | [optional] 
- **pipeline** | **str**|  | [optional] 
+ **limit** | **int**| Limit | [optional] 
+ **page** | **int**| Page | [optional] 
+ **status** | **str**| Status | [optional] 
+ **trigger** | **str**| Trigger | [optional] 
+ **pipeline** | **str**| Pipeline | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -119,7 +121,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

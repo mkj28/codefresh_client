@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **tokens_delete**
-> tokens_delete(id)
+> object tokens_delete(id)
 
 Delete
 
@@ -32,11 +32,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TokensApi(codefresh_client.ApiClient(configuration))
-id = 'id_example' # str | 
+id = 'id_example' # str | Id
 
 try:
     # Delete
-    api_instance.tokens_delete(id)
+    api_response = api_instance.tokens_delete(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TokensApi->tokens_delete: %s\n" % e)
 ```
@@ -45,11 +46,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **id** | **str**| Id | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -58,12 +59,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tokens_generate**
-> tokens_generate(subject_type=subject_type, subject_reference=subject_reference, unknown_base_type=unknown_base_type)
+> object tokens_generate(subject_type=subject_type, subject_reference=subject_reference, unknown_base_type=unknown_base_type)
 
 Generate
 
@@ -85,13 +86,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TokensApi(codefresh_client.ApiClient(configuration))
-subject_type = 'subject_type_example' # str |  (optional)
-subject_reference = 'subject_reference_example' # str |  (optional)
+subject_type = 'subject_type_example' # str | Subject type (optional)
+subject_reference = 'subject_reference_example' # str | Subject reference (optional)
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Generate
-    api_instance.tokens_generate(subject_type=subject_type, subject_reference=subject_reference, unknown_base_type=unknown_base_type)
+    api_response = api_instance.tokens_generate(subject_type=subject_type, subject_reference=subject_reference, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TokensApi->tokens_generate: %s\n" % e)
 ```
@@ -100,13 +102,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subject_type** | **str**|  | [optional] 
- **subject_reference** | **str**|  | [optional] 
+ **subject_type** | **str**| Subject type | [optional] 
+ **subject_reference** | **str**| Subject reference | [optional] 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -115,7 +117,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

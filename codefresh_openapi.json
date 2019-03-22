@@ -5,7 +5,7 @@
     "description": "Codefresh API openAPI 3.0 specification",
     "termsOfService": "https://codefresh.io/docs/docs/terms-and-privacy-policy/terms-of-service/",
     "title": "Codefresh API",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "x-logo": { "url": "https://i.ibb.co/X7kg7jb/image.png", "backgroundColor": "#FFFFFF", "altText": "Codefresh" }
   },
   "servers": [{ "url": "https://g.codefresh.io/api" }],
@@ -29,10 +29,10 @@
       "name": "On-Premise",
       "tags": [
         "Features",
-        "Runtime Environments",
         "Runtime Environments (Account)",
         "Runtime Environments (Plan)",
-        "Runtime Environments (System)"
+        "Runtime Environments (System)",
+        "Runtime Environments."
       ]
     }
   ],
@@ -65,7 +65,7 @@
     { "name": "Features", "description": "features", "x-id": "features" },
     { "name": "Clusters", "description": "clusters", "x-id": "clusters" },
     { "name": "Tokens", "description": "tokens", "x-id": "tokens" },
-    { "name": "Runtime Environments", "description": "onPrem.runtimeEnvs", "x-id": "onPrem.runtimeEnvs" },
+    { "name": "Runtime Environments.", "description": "onPrem.runtimeEnvs", "x-id": "onPrem.runtimeEnvs" },
     {
       "name": "Runtime Environments (Plan)",
       "description": "onPrem.runtimeEnvs.plan",
@@ -87,7 +87,9 @@
   "paths": {
     "/abac": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-create",
         "requestBody": {
@@ -122,7 +124,7 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Abac"],
         "operationId": "abac-rules-list",
@@ -140,7 +142,9 @@
     },
     "/abac/batch": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-create-or-delete",
         "requestBody": {
@@ -193,7 +197,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-list-by-resource",
         "summary": "Get rules by resource",
@@ -218,7 +224,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-tags-update",
         "requestBody": {
@@ -248,7 +256,9 @@
     },
     "/abac/tags/rules": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-tags-create",
         "requestBody": {
@@ -291,7 +301,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-list-by-team",
         "summary": "Get rules by team id",
@@ -307,7 +319,9 @@
     },
     "/abac/teamRules": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-create-in-batch",
         "requestBody": {
@@ -348,7 +362,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-get",
         "summary": "Get rule",
@@ -371,7 +387,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Abac"],
         "operationId": "abac-rules-delete",
         "summary": "Delete rule",
@@ -405,7 +423,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Not implemented yet",
         "operationId": "accounts-delete-user-from-account",
@@ -424,15 +444,36 @@
       "post": {
         "x-action": "resendInviteToUser",
         "x-entityIdPath": "params.userId",
+        "operationId": "accounts-resend-invite",
+        "tags": ["Accounts"],
+        "summary": "Resend invite",
+        "x-sdk-interface": "accounts.resendInvite",
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/{accountId}/{userId}/resendInvite\""
+            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/${USER_ID}/resendInvite\""
           },
-          { "lang": "node.js", "source": "sdk.undefined()" }
-        ],
-        "parameters": [],
-        "tags": []
+          { "lang": "node.js", "source": "sdk.accounts.resendInvite({ accountId, userId })" }
+        ]
       }
     },
     "/accounts/{accountId}/{userId}/adduser": {
@@ -455,7 +496,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "operationId": "accounts-add-existing-user-to-account",
         "summary": "Add existing user to account",
@@ -489,7 +532,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "operationId": "accounts-set-as-admin",
         "summary": "Set as admin",
@@ -521,7 +566,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "operationId": "accounts-delete-admin",
         "summary": "Delete admin",
@@ -543,12 +590,14 @@
           {
             "description": "id of an object",
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "required": true,
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Adds a not existing user to an account. the provider field is optional and if not provided it will be taken from the account model",
         "operationId": "accounts-add-user-to-account",
@@ -564,11 +613,11 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"userDetails\\\":\\\"${USER_DETAILS_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/accounts/{accountId}/adduser\""
+            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"userDetails\\\":\\\"${USER_DETAILS_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/adduser\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.accounts.addUserToAccount({ id }, {\n    userDetails: `${USER_DETAILS_STR}`\n})"
+            "source": "sdk.accounts.addUserToAccount({ accountId }, {\n    userDetails: `${USER_DETAILS_STR}`\n})"
           }
         ]
       }
@@ -581,12 +630,14 @@
           {
             "description": "id of an object",
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "required": true,
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Not implemented yet: update the user defined account fields. Receives a settings object (will be defined later)",
         "operationId": "accounts-update-account-public-settings",
@@ -622,11 +673,11 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"integrations\\\":${INTEGRATIONS_OBJ},\\\"notifications\\\":[${NOTIFICATIONS_OBJ},${NOTIFICATIONS_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/accounts/{accountId}/update\""
+            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"integrations\\\":${INTEGRATIONS_OBJ},\\\"notifications\\\":[${NOTIFICATIONS_OBJ},${NOTIFICATIONS_OBJ}]}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/update\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.accounts.updateAccountPublicSettings({ id }, {\n    integrations: { ...INTEGRATIONS_OBJ },\n    notifications: [\n        { ...NOTIFICATIONS_OBJ },\n        { ...NOTIFICATIONS_OBJ }\n    ]\n})"
+            "source": "sdk.accounts.updateAccountPublicSettings({ accountId }, {\n    integrations: { ...INTEGRATIONS_OBJ },\n    notifications: [\n        { ...NOTIFICATIONS_OBJ },\n        { ...NOTIFICATIONS_OBJ }\n    ]\n})"
           }
         ]
       }
@@ -639,12 +690,21 @@
           {
             "description": "id of an object",
             "in": "path",
-            "name": "id",
+            "name": "accountId",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "userId",
             "required": true,
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Not implemented yet",
         "operationId": "accounts-update-user-details",
@@ -667,11 +727,11 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"logins\\\":${LOGINS_OBJ},\\\"key\\\":${KEY_OBJ},\\\"settings\\\":${SETTINGS_OBJ}}\" \\\n    \"https://g.codefresh.io/api/accounts/{accountId}/{userId}/updateuser\""
+            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"logins\\\":${LOGINS_OBJ},\\\"key\\\":${KEY_OBJ},\\\"settings\\\":${SETTINGS_OBJ}}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/${USER_ID}/updateuser\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.accounts.updateUserDetails({ id }, {\n    logins: { ...LOGINS_OBJ },\n    key: { ...KEY_OBJ },\n    settings: { ...SETTINGS_OBJ }\n})"
+            "source": "sdk.accounts.updateUserDetails({ accountId, userId }, {\n    logins: { ...LOGINS_OBJ },\n    key: { ...KEY_OBJ },\n    settings: { ...SETTINGS_OBJ }\n})"
           }
         ]
       }
@@ -682,12 +742,14 @@
           {
             "description": "id of an object",
             "in": "path",
-            "name": "id",
+            "name": "accountId",
             "required": true,
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "List users of an account",
         "operationId": "accounts-get-users-for-account",
@@ -696,15 +758,17 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/{accountId}/users\""
+            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/accounts/${ACCOUNT_ID}/users\""
           },
-          { "lang": "node.js", "source": "sdk.accounts.getUsersForAccount({ id })" }
+          { "lang": "node.js", "source": "sdk.accounts.getUsersForAccount({ accountId })" }
         ]
       }
     },
     "/admin/accounts": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Add new account. Receives an account object ",
         "operationId": "accounts-add-account",
@@ -735,7 +799,7 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Accounts"],
         "description": "get all the accounts in the system",
@@ -754,7 +818,9 @@
     },
     "/admin/accounts/addpendinguser": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "operationId": "accounts-add-pending-user-without-account",
         "requestBody": {
@@ -802,7 +868,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Get an account by id",
         "operationId": "accounts-get-by-id",
@@ -826,7 +894,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Not implemented yet",
         "operationId": "accounts-delete-account",
@@ -852,7 +922,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Accounts"],
         "description": "Not implemented yet: Update the account info that only codefresh admins (codefresh employees, not account admin) can access",
         "operationId": "accounts-update-account",
@@ -875,14 +947,14 @@
     "/admin/runtime-environments": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
-        "tags": ["Runtime Environments"],
+        "tags": ["Runtime Environments."],
         "operationId": "onPrem-runtimeEnvs-list",
         "parameters": [
-          { "in": "query", "name": "limit", "schema": { "type": "string" } },
-          { "in": "query", "name": "offset", "schema": { "type": "string" } },
-          { "in": "query", "name": "accountIds", "schema": { "type": "string" } }
+          { "in": "query", "name": "limit", "schema": { "type": "string" }, "description": "Limit" },
+          { "in": "query", "name": "offset", "schema": { "type": "string" }, "description": "Offset" },
+          { "in": "query", "name": "accountIds", "schema": { "type": "string" }, "description": "Account ids" }
         ],
         "summary": "List",
         "x-sdk-interface": "onPrem.runtimeEnvs.list",
@@ -899,21 +971,38 @@
       "put": {
         "x-action": "setDefaultRuntimeEnvByAdminToAccount",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments (Account)"],
         "operationId": "onPrem-runtimeEnvs-account-set-default",
         "parameters": [
-          { "in": "path", "name": "account", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }
+          {
+            "in": "path",
+            "name": "account",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Account"
+          },
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          }
         ],
         "summary": "Set default for account",
         "x-sdk-interface": "onPrem.runtimeEnvs.account.setDefault",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/default/${ACCOUNT}/{runtimeEnvironmentName}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/default/${ACCOUNT}/${RUNTIME_ENVIRONMENT_NAME}\""
           },
-          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.account.setDefault({ account, name })" }
+          {
+            "lang": "node.js",
+            "source": "sdk.onPrem.runtimeEnvs.account.setDefault({ account, runtimeEnvironmentName })"
+          }
         ]
       }
     },
@@ -921,42 +1010,76 @@
       "put": {
         "x-action": "addRuntimeEnvToAccountByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
+        "tags": ["Runtime Environments (Account)"],
+        "operationId": "onPrem-runtimeEnvs-account-modify",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
+        "summary": "Add to account",
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.modify",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/modify/{runtimeEnvironmentName}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/modify/${RUNTIME_ENVIRONMENT_NAME}\""
           },
-          { "lang": "node.js", "source": "sdk.undefined()" }
-        ],
-        "parameters": [],
-        "tags": []
+          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.account.modify({ runtimeEnvironmentName })" }
+        ]
       },
       "delete": {
         "x-action": "removeRuntimeEnvFromAccountByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
+        "tags": ["Runtime Environments (Account)"],
+        "operationId": "onPrem-runtimeEnvs-account-delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
+        "summary": "Delete for account",
+        "x-sdk-interface": "onPrem.runtimeEnvs.account.delete",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/modify/{runtimeEnvironmentName}\""
+            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/account/modify/${RUNTIME_ENVIRONMENT_NAME}\""
           },
-          { "lang": "node.js", "source": "sdk.undefined()" }
-        ],
-        "parameters": [],
-        "tags": []
+          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.account.delete({ runtimeEnvironmentName })" }
+        ]
       }
     },
     "/admin/runtime-environments/account/{account}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Runtime Environments (Account)"],
         "operationId": "onPrem-runtimeEnvs-account-list",
         "parameters": [
-          { "in": "path", "name": "account", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "limit", "schema": { "type": "string" } },
-          { "in": "query", "name": "offset", "schema": { "type": "string" } },
-          { "in": "query", "name": "accountIds", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "account",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Account"
+          },
+          { "in": "query", "name": "limit", "schema": { "type": "string" }, "description": "Limit" },
+          { "in": "query", "name": "offset", "schema": { "type": "string" }, "description": "Offset" },
+          { "in": "query", "name": "accountIds", "schema": { "type": "string" }, "description": "Account ids" }
         ],
         "summary": "Get by account",
         "x-sdk-interface": "onPrem.runtimeEnvs.account.list",
@@ -976,61 +1099,83 @@
       "put": {
         "x-action": "setDefaultRuntimeEnvByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments (Plan)"],
         "operationId": "onPrem-runtimeEnvs-plan-set-default",
         "parameters": [
-          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }
+          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true, "description": "Plan" },
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          }
         ],
         "summary": "Set default",
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.setDefault",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/default/${PLAN}/{runtimeEnvironmentName}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/default/${PLAN}/${RUNTIME_ENVIRONMENT_NAME}\""
           },
-          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.plan.setDefault({ plan, name })" }
+          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.plan.setDefault({ plan, runtimeEnvironmentName })" }
         ]
       }
     },
     "/admin/runtime-environments/{runtimeEnvironmentName}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Runtime Environments (System)"],
         "operationId": "onPrem-runtimeEnvs-system-get",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "version", "schema": { "type": "string" } },
-          { "in": "query", "name": "extend", "schema": { "type": "string" } },
-          { "in": "query", "name": "history", "schema": { "type": "string" } },
-          { "in": "query", "name": "successors", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "version", "schema": { "type": "string" }, "description": "Version" },
+          { "in": "query", "name": "extend", "schema": { "type": "string" }, "description": "Extend" },
+          { "in": "query", "name": "history", "schema": { "type": "string" }, "description": "History" },
+          { "in": "query", "name": "successors", "schema": { "type": "string" }, "description": "Successors" }
         ],
         "summary": "Get sys re",
         "x-sdk-interface": "onPrem.runtimeEnvs.system.get",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/{runtimeEnvironmentName}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}&successors=${SUCCESSORS}\""
+            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${RUNTIME_ENVIRONMENT_NAME}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}&successors=${SUCCESSORS}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.system.get({\n    name,\n    version,\n    extend,\n    history,\n    successors\n})"
+            "source": "sdk.onPrem.runtimeEnvs.system.get({\n    runtimeEnvironmentName,\n    version,\n    extend,\n    history,\n    successors\n})"
           }
         ]
       },
       "put": {
         "x-action": "upsertRuntimeEnvByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments (System)"],
         "operationId": "onPrem-runtimeEnvs-system-update",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "extend", "schema": { "type": "string" } },
-          { "in": "query", "name": "description", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "description": "Runtime environment name",
+            "schema": { "type": "string" },
+            "required": true
+          },
+          { "in": "query", "name": "extend", "description": "Extend or not", "schema": { "type": "string" } },
+          { "in": "query", "name": "description", "description": "Description", "schema": { "type": "string" } }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Update sys re",
@@ -1038,74 +1183,96 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/{runtimeEnvironmentName}?extend=${EXTEND}&description=${DESCRIPTION}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${RUNTIME_ENVIRONMENT_NAME}?extend=${EXTEND}&description=${DESCRIPTION}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.system.update({ name, extend, description }, { ...REQUEST_BODY_OBJ })"
+            "source": "sdk.onPrem.runtimeEnvs.system.update({ runtimeEnvironmentName, extend, description }, { ...REQUEST_BODY_OBJ })"
           }
         ]
       },
       "delete": {
         "x-action": "deleteRuntimeEnvByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments (System)"],
         "operationId": "onPrem-runtimeEnvs-system-delete",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "force", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "force", "schema": { "type": "string" }, "description": "Force" }
         ],
         "summary": "Delete sys re",
         "x-sdk-interface": "onPrem.runtimeEnvs.system.delete",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/{runtimeEnvironmentName}?force=${FORCE}\""
+            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${RUNTIME_ENVIRONMENT_NAME}?force=${FORCE}\""
           },
-          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.system.delete({ name, force })" }
+          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.system.delete({ runtimeEnvironmentName, force })" }
         ]
       }
     },
     "/admin/runtime-environments/{plan}/{runtimeEnvironmentName}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
-        "tags": ["Runtime Environments"],
+        "tags": ["Runtime Environments."],
         "operationId": "onPrem-runtimeEnvs-plan-get",
         "parameters": [
-          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "version", "schema": { "type": "string" } },
-          { "in": "query", "name": "extend", "schema": { "type": "string" } },
-          { "in": "query", "name": "history", "schema": { "type": "string" } },
-          { "in": "query", "name": "successors", "schema": { "type": "string" } }
+          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true, "description": "Plan" },
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "version", "schema": { "type": "string" }, "description": "Version" },
+          { "in": "query", "name": "extend", "schema": { "type": "string" }, "description": "Extend" },
+          { "in": "query", "name": "history", "schema": { "type": "string" }, "description": "History" },
+          { "in": "query", "name": "successors", "schema": { "type": "string" }, "description": "Successors" }
         ],
         "summary": "Get",
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.get",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/{runtimeEnvironmentName}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}&successors=${SUCCESSORS}\""
+            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/${RUNTIME_ENVIRONMENT_NAME}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}&successors=${SUCCESSORS}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.plan.get({\n    plan,\n    name,\n    version,\n    extend,\n    history,\n    successors\n})"
+            "source": "sdk.onPrem.runtimeEnvs.plan.get({\n    plan,\n    runtimeEnvironmentName,\n    version,\n    extend,\n    history,\n    successors\n})"
           }
         ]
       },
       "put": {
         "x-action": "upsertRuntimeEnvByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments (Plan)"],
         "operationId": "onPrem-runtimeEnvs-plan-update",
         "parameters": [
-          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "extend", "schema": { "type": "string" } },
-          { "in": "query", "name": "description", "schema": { "type": "string" } }
+          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true, "description": "Plan" },
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "extend", "schema": { "type": "string" }, "description": "Extend" },
+          { "in": "query", "name": "description", "schema": { "type": "string" }, "description": "Description" }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Update",
@@ -1113,33 +1280,41 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/{runtimeEnvironmentName}?extend=${EXTEND}&description=${DESCRIPTION}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/${RUNTIME_ENVIRONMENT_NAME}?extend=${EXTEND}&description=${DESCRIPTION}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.onPrem.runtimeEnvs.plan.update({\n    plan,\n    name,\n    extend,\n    description\n}, { ...REQUEST_BODY_OBJ })"
+            "source": "sdk.onPrem.runtimeEnvs.plan.update({\n    plan,\n    runtimeEnvironmentName,\n    extend,\n    description\n}, { ...REQUEST_BODY_OBJ })"
           }
         ]
       },
       "delete": {
         "x-action": "deleteRuntimeEnvByAdmin",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments (Plan)"],
         "operationId": "onPrem-runtimeEnvs-plan-delete",
         "parameters": [
-          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "force", "schema": { "type": "string" } }
+          { "in": "path", "name": "plan", "schema": { "type": "string" }, "required": true, "description": "Plan" },
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "force", "schema": { "type": "string" }, "description": "Force" }
         ],
         "summary": "Delete",
         "x-sdk-interface": "onPrem.runtimeEnvs.plan.delete",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/{runtimeEnvironmentName}?force=${FORCE}\""
+            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/admin/runtime-environments/${PLAN}/${RUNTIME_ENVIRONMENT_NAME}?force=${FORCE}\""
           },
-          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.plan.delete({ plan, name, force })" }
+          { "lang": "node.js", "source": "sdk.onPrem.runtimeEnvs.plan.delete({ plan, runtimeEnvironmentName, force })" }
         ]
       }
     },
@@ -1147,12 +1322,19 @@
       "post": {
         "x-action": "createApiKey",
         "x-entityIdPath": "body.name",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Tokens"],
         "operationId": "tokens-generate",
         "parameters": [
-          { "in": "query", "name": "subjectType", "schema": { "type": "string" } },
-          { "in": "query", "name": "subjectReference", "schema": { "type": "string" } }
+          { "in": "query", "name": "subjectType", "schema": { "type": "string" }, "description": "Subject type" },
+          {
+            "in": "query",
+            "name": "subjectReference",
+            "schema": { "type": "string" },
+            "description": "Subject reference"
+          }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Generate",
@@ -1173,10 +1355,14 @@
       "delete": {
         "x-action": "deleteApiKey",
         "x-entityIdPath": "params.id",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Tokens"],
         "operationId": "tokens-delete",
-        "parameters": [{ "in": "path", "name": "id", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "id", "schema": { "type": "string" }, "required": true, "description": "Id" }
+        ],
         "summary": "Delete",
         "x-sdk-interface": "tokens.delete",
         "x-code-samples": [
@@ -1191,7 +1377,7 @@
     "/auth/keys": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Tokens"],
         "operationId": "tokens-list",
@@ -1218,7 +1404,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Builds"],
         "operationId": "workflows-get",
         "summary": "Get",
@@ -1236,13 +1424,15 @@
       "get": {
         "operationId": "workflows-list",
         "parameters": [
-          { "name": "limit", "in": "query", "schema": { "type": "integer" } },
-          { "name": "page", "in": "query", "schema": { "type": "integer" } },
-          { "name": "status", "in": "query", "schema": { "type": "string" } },
-          { "name": "trigger", "in": "query", "schema": { "type": "string" } },
-          { "name": "pipeline", "in": "query", "schema": { "type": "string" } }
+          { "name": "limit", "in": "query", "schema": { "type": "integer" }, "description": "Limit" },
+          { "name": "page", "in": "query", "schema": { "type": "integer" }, "description": "Page" },
+          { "name": "status", "in": "query", "schema": { "type": "string" }, "description": "Status" },
+          { "name": "trigger", "in": "query", "schema": { "type": "string" }, "description": "Trigger" },
+          { "name": "pipeline", "in": "query", "schema": { "type": "string" }, "description": "Pipeline" }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Builds"],
         "summary": "List",
         "x-sdk-interface": "workflows.list",
@@ -1261,7 +1451,7 @@
     "/builds/rebuild/{id}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Builds"],
         "operationId": "workflows-restart",
@@ -1288,7 +1478,7 @@
     "/clusters": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Clusters"],
         "operationId": "clusters-list",
@@ -1306,12 +1496,20 @@
     },
     "/clusters/{provider}/cluster/{id}": {
       "delete": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Clusters"],
         "operationId": "clusters-delete",
         "parameters": [
-          { "name": "provider", "in": "path", "schema": { "type": "string" }, "required": true },
-          { "name": "id", "in": "path", "schema": { "type": "string" }, "required": true }
+          {
+            "name": "provider",
+            "in": "path",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Provider"
+          },
+          { "name": "id", "in": "path", "schema": { "type": "string" }, "required": true, "description": "Id" }
         ],
         "summary": "Delete",
         "x-sdk-interface": "clusters.delete",
@@ -1326,7 +1524,9 @@
     },
     "/compositions": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-create",
         "requestBody": {
@@ -1334,9 +1534,9 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "isAdvanced": { "default": false, "type": "boolean" },
+                  "isAdvanced": { "type": "boolean" },
                   "name": { "type": "string" },
-                  "vars": { "default": [], "items": { "type": "string" }, "type": "array" },
+                  "vars": { "items": { "type": "string" }, "type": "array" },
                   "yamlJson": { "type": "string" }
                 },
                 "type": "object"
@@ -1361,7 +1561,7 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Compositions"],
         "operationId": "compositions-list",
@@ -1388,14 +1588,16 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-launch",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "properties": { "vars": { "default": [], "items": { "type": "string" }, "type": "array" } },
+                "properties": { "vars": { "items": { "type": "string" }, "type": "array" } },
                 "type": "object"
               }
             }
@@ -1426,7 +1628,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-get",
         "summary": "Get",
@@ -1449,7 +1653,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-update",
         "requestBody": {
@@ -1457,9 +1663,9 @@
             "application/json": {
               "schema": {
                 "properties": {
-                  "isAdvanced": { "default": false, "type": "boolean" },
+                  "isAdvanced": { "type": "boolean" },
                   "name": { "type": "string" },
-                  "vars": { "default": [], "items": { "type": "string" }, "type": "array" },
+                  "vars": { "items": { "type": "string" }, "type": "array" },
                   "yamlJson": { "type": "string" }
                 },
                 "type": "object"
@@ -1483,10 +1689,14 @@
         ]
       },
       "patch": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-patch",
-        "parameters": [{ "in": "path", "name": "id", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "id", "schema": { "type": "string" }, "required": true, "description": "Id" }
+        ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Patch",
         "x-sdk-interface": "compositions.patch",
@@ -1508,7 +1718,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-delete",
         "summary": "Delete",
@@ -1533,7 +1745,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Compositions"],
         "operationId": "compositions-duplicate",
         "summary": "Duplicate",
@@ -1550,10 +1764,14 @@
     "/contexts": {
       "post": {
         "x-action": "createContext",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Contexts"],
         "operationId": "contexts-create",
-        "parameters": [{ "in": "query", "name": "skipValidation", "schema": { "type": "string" } }],
+        "parameters": [
+          { "in": "query", "name": "skipValidation", "schema": { "type": "string" }, "description": "Skip validation" }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1581,13 +1799,13 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Contexts"],
         "operationId": "contexts-list",
         "parameters": [
-          { "in": "query", "name": "type", "schema": { "type": "string" } },
-          { "in": "query", "name": "decrypt", "schema": { "type": "string" } }
+          { "in": "query", "name": "type", "schema": { "type": "string" }, "description": "Type" },
+          { "in": "query", "name": "decrypt", "schema": { "type": "string" }, "description": "Decrypt" }
         ],
         "summary": "List",
         "x-sdk-interface": "contexts.list",
@@ -1603,13 +1821,13 @@
     "/contexts/{name}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Contexts"],
         "operationId": "contexts-get",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "decrypt", "schema": { "type": "string" } }
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" },
+          { "in": "query", "name": "decrypt", "schema": { "type": "string" }, "description": "Decrypt" }
         ],
         "summary": "Get",
         "x-sdk-interface": "contexts.get",
@@ -1624,10 +1842,14 @@
       "put": {
         "x-action": "updateContext",
         "x-entityIdPath": "params.name",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Contexts"],
         "operationId": "contexts-replace",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1656,10 +1878,14 @@
       "patch": {
         "x-action": "updateContext",
         "x-entityIdPath": "params.name",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Contexts"],
         "operationId": "contexts-patch",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1688,10 +1914,14 @@
       "delete": {
         "x-action": "deleteContext",
         "x-entityIdPath": "params.name",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Contexts"],
         "operationId": "contexts-delete",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "summary": "Delete",
         "x-sdk-interface": "contexts.delete",
         "x-code-samples": [
@@ -1707,10 +1937,14 @@
       "patch": {
         "x-action": "updateContext",
         "x-entityIdPath": "params.name",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Contexts"],
-        "operationId": "contexts-patch",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "operationId": "contexts-default-patch",
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1724,7 +1958,7 @@
           }
         },
         "summary": "Patch",
-        "x-sdk-interface": "contexts.patch",
+        "x-sdk-interface": "contexts.default.patch",
         "x-code-samples": [
           {
             "lang": "curl",
@@ -1732,7 +1966,7 @@
           },
           {
             "lang": "node.js",
-            "source": "sdk.contexts.patch({ name }, {\n    spec: {\n        data: { ...DATA_OBJ }\n    }\n})"
+            "source": "sdk.contexts.default.patch({ name }, {\n    spec: {\n        data: { ...DATA_OBJ }\n    }\n})"
           }
         ]
       }
@@ -1740,7 +1974,7 @@
     "/environments": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Environments"],
         "operationId": "envs-list",
@@ -1759,7 +1993,7 @@
     "/environments/all/terminate": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Environments"],
         "operationId": "envs-terminate-all",
@@ -1778,11 +2012,13 @@
     "/environments/{id}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Environments"],
         "operationId": "envs-get",
-        "parameters": [{ "in": "path", "name": "id", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "id", "schema": { "type": "string" }, "required": true, "description": "Id" }
+        ],
         "summary": "Get",
         "x-sdk-interface": "envs.get",
         "x-code-samples": [
@@ -1805,7 +2041,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-pause",
         "summary": "Pause",
@@ -1837,7 +2075,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-rename",
         "summary": "Rename",
@@ -1862,7 +2102,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-start",
         "summary": "Start",
@@ -1887,7 +2129,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-status",
         "summary": "Status",
@@ -1912,7 +2156,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-stop",
         "summary": "Stop",
@@ -1937,7 +2183,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-terminate",
         "summary": "Terminate",
@@ -1962,7 +2210,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Environments"],
         "operationId": "envs-unpause",
         "summary": "Unpause",
@@ -1987,7 +2237,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Features"],
         "operationId": "features-account",
         "summary": "Account",
@@ -2288,7 +2540,7 @@
     "/helm/boards/sections/reorder": {
       "post": {
         "responses": {
-          "200": { "description": "OK" },
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" },
           "500": {
             "content": {
               "application/json": {
@@ -3009,7 +3261,9 @@
     },
     "/helm/repos": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Repos"],
         "operationId": "helm-repos-create",
         "parameters": [],
@@ -3026,11 +3280,11 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Helm Repos"],
         "operationId": "helm-repos-list",
-        "parameters": [{ "in": "query", "name": "query", "schema": { "type": "string" } }],
+        "parameters": [{ "in": "query", "name": "query", "schema": { "type": "string" }, "description": "Query" }],
         "summary": "List",
         "x-sdk-interface": "helm.repos.list",
         "x-code-samples": [
@@ -3045,11 +3299,13 @@
     "/helm/repos/{name}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Helm Repos"],
         "operationId": "helm-repos-get",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "summary": "Get",
         "x-sdk-interface": "helm.repos.get",
         "x-code-samples": [
@@ -3061,10 +3317,14 @@
         ]
       },
       "put": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Repos"],
         "operationId": "helm-repos-update",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Update",
         "x-sdk-interface": "helm.repos.update",
@@ -3077,10 +3337,14 @@
         ]
       },
       "delete": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Repos"],
         "operationId": "helm-repos-delete",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "summary": "Delete",
         "x-sdk-interface": "helm.repos.delete",
         "x-code-samples": [
@@ -3094,10 +3358,12 @@
     },
     "/hermes/events": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Triggers Events"],
         "operationId": "triggers-events-create",
-        "parameters": [{ "in": "query", "name": "public", "schema": { "type": "string" } }],
+        "parameters": [{ "in": "query", "name": "public", "schema": { "type": "string" }, "description": "Public" }],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Create",
         "x-sdk-interface": "triggers.events.create",
@@ -3111,15 +3377,15 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers Events"],
         "operationId": "triggers-events-list",
         "parameters": [
-          { "in": "query", "name": "type", "schema": { "type": "string" } },
-          { "in": "query", "name": "kind", "schema": { "type": "string" } },
-          { "in": "query", "name": "filter", "schema": { "type": "string" } },
-          { "in": "query", "name": "public", "schema": { "type": "string" } }
+          { "in": "query", "name": "type", "schema": { "type": "string" }, "description": "Type" },
+          { "in": "query", "name": "kind", "schema": { "type": "string" }, "description": "Kind" },
+          { "in": "query", "name": "filter", "schema": { "type": "string" }, "description": "Filter" },
+          { "in": "query", "name": "public", "schema": { "type": "string" }, "description": "Public" }
         ],
         "summary": "List",
         "x-sdk-interface": "triggers.events.list",
@@ -3138,11 +3404,13 @@
     "/hermes/events/{event}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers Events"],
         "operationId": "triggers-events-get",
-        "parameters": [{ "in": "path", "name": "event", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true, "description": "Event" }
+        ],
         "summary": "Get",
         "x-sdk-interface": "triggers.events.get",
         "x-code-samples": [
@@ -3156,12 +3424,20 @@
     },
     "/hermes/events/{event}/{context}": {
       "delete": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Triggers Events"],
         "operationId": "triggers-events-delete",
         "parameters": [
-          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "context", "schema": { "type": "string" }, "required": true }
+          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true, "description": "Event" },
+          {
+            "in": "path",
+            "name": "context",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Context"
+          }
         ],
         "summary": "Delete",
         "x-sdk-interface": "triggers.events.delete",
@@ -3177,7 +3453,7 @@
     "/hermes/triggers": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers"],
         "operationId": "triggers-list",
@@ -3196,11 +3472,13 @@
     "/hermes/triggers/event/{event}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers"],
         "operationId": "triggers-get-event-triggers",
-        "parameters": [{ "in": "path", "name": "event", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true, "description": "Event" }
+        ],
         "summary": "Get event triggers",
         "x-sdk-interface": "triggers.getEventTriggers",
         "x-code-samples": [
@@ -3215,11 +3493,19 @@
     "/hermes/triggers/pipeline/{pipeline}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers"],
         "operationId": "triggers-get-pipeline-triggers",
-        "parameters": [{ "in": "path", "name": "pipeline", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pipeline",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Pipeline"
+          }
+        ],
         "summary": "Get pipeline triggers",
         "x-sdk-interface": "triggers.getPipelineTriggers",
         "x-code-samples": [
@@ -3233,12 +3519,20 @@
     },
     "/hermes/triggers/{event}/{pipeline}": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Triggers"],
         "operationId": "triggers-create",
         "parameters": [
-          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "pipeline", "schema": { "type": "string" }, "required": true }
+          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true, "description": "Event" },
+          {
+            "in": "path",
+            "name": "pipeline",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Pipeline"
+          }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Create",
@@ -3252,12 +3546,20 @@
         ]
       },
       "delete": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Triggers"],
         "operationId": "triggers-delete",
         "parameters": [
-          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "pipeline", "schema": { "type": "string" }, "required": true }
+          { "in": "path", "name": "event", "schema": { "type": "string" }, "required": true, "description": "Event" },
+          {
+            "in": "path",
+            "name": "pipeline",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Pipeline"
+          }
         ],
         "summary": "Delete",
         "x-sdk-interface": "triggers.delete",
@@ -3273,7 +3575,7 @@
     "/hermes/types": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers Types"],
         "operationId": "triggers-types-list",
@@ -3292,13 +3594,13 @@
     "/hermes/types/{type}/{kind}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Triggers Types"],
         "operationId": "triggers-types-get",
         "parameters": [
-          { "in": "path", "name": "type", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "kind", "schema": { "type": "string" }, "required": true }
+          { "in": "path", "name": "type", "schema": { "type": "string" }, "required": true, "description": "Type" },
+          { "in": "path", "name": "kind", "schema": { "type": "string" }, "required": true, "description": "Kind" }
         ],
         "summary": "Get",
         "x-sdk-interface": "triggers.types.get",
@@ -3314,20 +3616,25 @@
     "/images": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Images"],
         "operationId": "images-list",
         "parameters": [
-          { "in": "query", "name": "limit", "schema": { "type": "string" } },
-          { "in": "query", "name": "offset", "schema": { "type": "string" } },
-          { "in": "query", "name": "metadata", "schema": { "type": "string" } },
-          { "in": "query", "name": "tag", "schema": { "type": "string" } },
-          { "in": "query", "name": "type", "schema": { "type": "string" } },
-          { "in": "query", "name": "branch", "schema": { "type": "string" } },
-          { "in": "query", "name": "imageDisplayNameRegex", "schema": { "type": "string" } },
-          { "in": "query", "name": "select", "schema": { "type": "string" } },
-          { "in": "query", "name": "sha", "schema": { "type": "string" } }
+          { "in": "query", "name": "limit", "schema": { "type": "string" }, "description": "Limit" },
+          { "in": "query", "name": "offset", "schema": { "type": "string" }, "description": "Offset" },
+          { "in": "query", "name": "metadata", "schema": { "type": "string" }, "description": "Metadata" },
+          { "in": "query", "name": "tag", "schema": { "type": "string" }, "description": "Tag" },
+          { "in": "query", "name": "type", "schema": { "type": "string" }, "description": "Type" },
+          { "in": "query", "name": "branch", "schema": { "type": "string" }, "description": "Branch" },
+          {
+            "in": "query",
+            "name": "imageDisplayNameRegex",
+            "schema": { "type": "string" },
+            "description": "Image display name regex"
+          },
+          { "in": "query", "name": "select", "schema": { "type": "string" }, "description": "Select" },
+          { "in": "query", "name": "sha", "schema": { "type": "string" }, "description": "Sha" }
         ],
         "summary": "List",
         "x-sdk-interface": "images.list",
@@ -3345,7 +3652,9 @@
     },
     "/images/external": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-add-from-external-source",
         "summary": "Add from external source",
@@ -3372,7 +3681,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-get",
         "summary": "Get",
@@ -3397,7 +3708,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-get-tags",
         "summary": "Get tags",
@@ -3423,7 +3736,9 @@
           },
           { "description": "tag", "in": "path", "name": "tag", "required": true, "schema": { "type": "string" } }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-tag",
         "summary": "Tag",
@@ -3453,7 +3768,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-untag",
         "summary": "Untag",
@@ -3478,7 +3795,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-upsert-metadata",
         "requestBody": {
@@ -3519,7 +3838,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-get-metadata",
         "summary": "Get metadata",
@@ -3551,7 +3872,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Images"],
         "operationId": "images-delete-metadata",
         "summary": "Delete metadata",
@@ -3569,13 +3892,33 @@
       "post": {
         "x-entityIdPath": "params.releaseName",
         "x-action": "helmReleaseDeleted",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Releases"],
         "operationId": "helm-releases-delete",
         "parameters": [
-          { "in": "path", "name": "releaseName", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "selector", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "tillerNamespace", "schema": { "type": "string" }, "required": true }
+          {
+            "in": "path",
+            "name": "releaseName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Release name"
+          },
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Selector"
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Tiller namespace"
+          }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Delete",
@@ -3594,12 +3937,20 @@
     },
     "/kubernetes/releases/{releaseName}/test": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Releases"],
         "operationId": "helm-releases-test",
         "parameters": [
-          { "in": "path", "name": "releaseName", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "selector", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "releaseName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Release name"
+          },
+          { "in": "query", "name": "selector", "schema": { "type": "string" }, "description": "Selector" }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Test",
@@ -3615,12 +3966,26 @@
     },
     "/kubernetes/secrets/imagePullSecret": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Kubernetes"],
         "operationId": "kubernetes-generate-image-pull-secret",
         "parameters": [
-          { "in": "query", "name": "namespace", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "selector", "schema": { "type": "string" }, "required": true }
+          {
+            "in": "query",
+            "name": "namespace",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Namespace"
+          },
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Selector"
+          }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Generate image pull secret",
@@ -3641,12 +4006,26 @@
       "post": {
         "x-entityIdPath": "body.releaseName",
         "x-action": "helmReleaseInstalled",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Charts"],
         "operationId": "helm-charts-install",
         "parameters": [
-          { "in": "query", "name": "selector", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "tillerNamespace", "schema": { "type": "string" }, "required": true }
+          {
+            "in": "query",
+            "name": "selector",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Selector"
+          },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Tiller namespace"
+          }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Install",
@@ -3665,12 +4044,20 @@
     },
     "/kubernetes/chart/promote": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Helm Charts"],
         "operationId": "helm-charts-promote",
         "parameters": [
-          { "in": "query", "name": "selector", "schema": { "type": "string" } },
-          { "in": "query", "name": "tillerNamespace", "schema": { "type": "string" }, "required": true }
+          { "in": "query", "name": "selector", "schema": { "type": "string" }, "description": "Selector" },
+          {
+            "in": "query",
+            "name": "tillerNamespace",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Tiller namespace"
+          }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Promote",
@@ -3690,11 +4077,13 @@
     "/charts/{repo}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["charts"],
         "operationId": "charts-list",
-        "parameters": [{ "in": "path", "name": "repo", "schema": { "type": "string" } }],
+        "parameters": [
+          { "in": "path", "name": "repo", "required": true, "schema": { "type": "string" }, "description": "Repo" }
+        ],
         "summary": "Get charts by repo",
         "x-sdk-interface": "charts.list",
         "x-code-samples": [
@@ -3708,7 +4097,9 @@
     },
     "/pipelines": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Pipelines"],
         "operationId": "pipelines-create",
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
@@ -3725,23 +4116,14 @@
       },
       "get": {
         "responses": {
-          "200": {
-            "description": "ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Pipelines"],
         "parameters": [
-          { "name": "offset", "in": "query", "schema": { "type": "integer" } },
-          { "name": "id", "in": "query", "schema": { "type": "string" } },
-          { "in": "query", "name": "limit", "schema": { "type": "string" } },
-          { "in": "query", "name": "labels", "schema": { "type": "string" } }
+          { "name": "offset", "in": "query", "schema": { "type": "integer" }, "description": "Offset" },
+          { "name": "id", "in": "query", "schema": { "type": "string" }, "description": "Id" },
+          { "in": "query", "name": "limit", "schema": { "type": "string" }, "description": "Limit" },
+          { "in": "query", "name": "labels", "schema": { "type": "string" }, "description": "Labels" }
         ],
         "operationId": "pipelines-list",
         "summary": "List",
@@ -3758,16 +4140,13 @@
     "/pipelines/run/{name}": {
       "post": {
         "responses": {
-          "200": {
-            "description": "ok",
-            "headers": {
-              "Location": { "schema": { "type": "string" }, "description": "Endpoint to query the build status" }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Pipelines"],
         "operationId": "pipelines-run",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" }
+        ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Run",
         "x-sdk-interface": "pipelines.run",
@@ -3782,7 +4161,9 @@
     },
     "/pipelines/yaml/validator": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Pipelines"],
         "operationId": "pipelines-validate-yaml",
         "parameters": [],
@@ -3808,19 +4189,15 @@
             "required": true,
             "schema": { "type": "string" }
           },
-          { "in": "query", "name": "decryptVariables", "schema": { "type": "string" } }
+          {
+            "in": "query",
+            "name": "decryptVariables",
+            "schema": { "type": "string" },
+            "description": "Decrypt variables"
+          }
         ],
         "responses": {
-          "200": {
-            "description": "ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Pipelines"],
         "operationId": "pipelines-get",
@@ -3925,7 +4302,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Pipelines"],
         "operationId": "pipelines-delete",
         "summary": "Delete",
@@ -3950,7 +4329,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "progress structure" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Progress"],
         "operationId": "progress-download",
         "summary": "Download",
@@ -3975,7 +4356,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "progress structure" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Progress"],
         "operationId": "progress-get",
         "summary": "Get",
@@ -3998,7 +4381,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "progress structure" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Progress"],
         "operationId": "progress-terminate",
         "summary": "Terminate",
@@ -4014,7 +4399,9 @@
     },
     "/registry/auth/token": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Codefresh Registry"],
         "operationId": "codefresh-registry-generate-cfcr-token",
         "requestBody": {
@@ -4044,20 +4431,11 @@
     "/repos": {
       "get": {
         "responses": {
-          "200": {
-            "description": "ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Repos"],
         "operationId": "repos-git-list",
-        "parameters": [{ "in": "query", "name": "context", "schema": { "type": "string" } }],
+        "parameters": [{ "in": "query", "name": "context", "schema": { "type": "string" }, "description": "Context" }],
         "summary": "List git repos (github, bitbucket, etc)",
         "x-sdk-interface": "repos.git.list",
         "x-code-samples": [
@@ -4073,7 +4451,9 @@
       "post": {
         "x-action": "createRegistry",
         "x-entityIdPath": "body.name",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Codefresh Registry"],
         "operationId": "registries-create",
         "parameters": [],
@@ -4112,16 +4492,7 @@
       },
       "get": {
         "responses": {
-          "200": {
-            "description": "ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Codefresh Registry"],
         "operationId": "registries-list",
@@ -4141,6 +4512,19 @@
       "patch": {
         "x-action": "updateRegistry",
         "x-entityIdPath": "params.registryId",
+        "operationId": "registries-patch",
+        "tags": ["Codefresh Registry"],
+        "summary": "Patch",
+        "x-sdk-interface": "registries.patch",
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "registryId",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -4157,30 +4541,33 @@
           "description": "Description of the token",
           "required": true
         },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"password\\\":\\\"${PASSWORD_STR}\\\",\\\"secretAccessKey\\\":\\\"${SECRET_ACCESS_KEY_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/registries/{registryId}\""
+            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"password\\\":\\\"${PASSWORD_STR}\\\",\\\"secretAccessKey\\\":\\\"${SECRET_ACCESS_KEY_STR}\\\"}\" \\\n    \"https://g.codefresh.io/api/registries/${REGISTRY_ID}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.undefined({\n    password: `${PASSWORD_STR}`,\n    secretAccessKey: `${SECRET_ACCESS_KEY_STR}`\n})"
+            "source": "sdk.registries.patch({ registryId }, {\n    password: `${PASSWORD_STR}`,\n    secretAccessKey: `${SECRET_ACCESS_KEY_STR}`\n})"
           }
-        ],
-        "parameters": [],
-        "tags": []
+        ]
       },
       "delete": {
         "x-action": "deleteRegistry",
         "x-entityIdPath": "params.registryId",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Codefresh Registry"],
         "operationId": "registries-delete",
         "parameters": [
           {
             "description": "id of an object",
             "in": "path",
-            "name": "id",
+            "name": "registryId",
             "required": true,
             "schema": { "type": "string" }
           }
@@ -4190,9 +4577,9 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/registries/{registryId}\""
+            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/registries/${REGISTRY_ID}\""
           },
-          { "lang": "node.js", "source": "sdk.registries.delete({ id })" }
+          { "lang": "node.js", "source": "sdk.registries.delete({ registryId })" }
         ]
       }
     },
@@ -4200,20 +4587,36 @@
       "patch": {
         "x-action": "setDefaultRegistry",
         "x-entityIdPath": "params.registryId",
+        "operationId": "registries-default-patch",
+        "summary": "Patch default",
+        "x-sdk-interface": "registries.setDefault",
+        "tags": ["Codefresh Registry"],
+        "parameters": [
+          {
+            "description": "id of an object",
+            "in": "path",
+            "name": "registryId",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/registries/{registryId}/default\""
+            "source": "curl  \\\n    -X PATCH \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/registries/${REGISTRY_ID}/default\""
           },
-          { "lang": "node.js", "source": "sdk.undefined()" }
-        ],
-        "parameters": [],
-        "tags": []
+          { "lang": "node.js", "source": "sdk.registries.setDefault({ registryId })" }
+        ]
       }
     },
     "/registries/test": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Codefresh Registry"],
         "operationId": "registries-test",
         "parameters": [],
@@ -4253,22 +4656,19 @@
     "/repos/existing": {
       "get": {
         "responses": {
-          "200": {
-            "description": "ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Repos"],
         "operationId": "repos-list",
         "parameters": [
-          { "in": "query", "name": "context", "schema": { "type": "string" } },
-          { "in": "query", "name": "thin", "schema": { "type": "string" }, "allowEmptyValue": true }
+          { "in": "query", "name": "context", "schema": { "type": "string" }, "description": "Context" },
+          {
+            "in": "query",
+            "name": "thin",
+            "schema": { "type": "string" },
+            "allowEmptyValue": true,
+            "description": "Thin"
+          }
         ],
         "summary": "List",
         "x-sdk-interface": "repos.list",
@@ -4300,16 +4700,7 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "ok",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Repos"],
         "operationId": "repos-get-settings",
@@ -4327,14 +4718,14 @@
     "/repos/{owner}/{repo}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Repos"],
         "operationId": "repos-git-get-repo",
         "parameters": [
-          { "in": "path", "name": "owner", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "repo", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "context", "schema": { "type": "string" } }
+          { "in": "path", "name": "owner", "schema": { "type": "string" }, "required": true, "description": "Owner" },
+          { "in": "path", "name": "repo", "schema": { "type": "string" }, "required": true, "description": "Repo" },
+          { "in": "query", "name": "context", "schema": { "type": "string" }, "description": "Context" }
         ],
         "summary": "Get git repo",
         "x-sdk-interface": "repos.git.get",
@@ -4350,13 +4741,13 @@
     "/runtime-environments": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Runtime Environments"],
         "operationId": "runtime-envs-list",
         "parameters": [
-          { "in": "query", "name": "limit", "schema": { "type": "string" } },
-          { "in": "query", "name": "offset", "schema": { "type": "string" } }
+          { "in": "query", "name": "limit", "schema": { "type": "string" }, "description": "Limit" },
+          { "in": "query", "name": "offset", "schema": { "type": "string" }, "description": "Offset" }
         ],
         "summary": "List",
         "x-sdk-interface": "runtimeEnvs.list",
@@ -4373,57 +4764,81 @@
       "put": {
         "x-action": "upsertRuntimeEnv",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments"],
         "operationId": "runtime-envs-set-default",
-        "parameters": [{ "in": "path", "name": "name", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          }
+        ],
         "summary": "Set default",
         "x-sdk-interface": "runtimeEnvs.setDefault",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/default/{runtimeEnvironmentName}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/default/${RUNTIME_ENVIRONMENT_NAME}\""
           },
-          { "lang": "node.js", "source": "sdk.runtimeEnvs.setDefault({ name })" }
+          { "lang": "node.js", "source": "sdk.runtimeEnvs.setDefault({ runtimeEnvironmentName })" }
         ]
       }
     },
     "/runtime-environments/{runtimeEnvironmentName}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Runtime Environments"],
         "operationId": "runtime-envs-get",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "version", "schema": { "type": "string" } },
-          { "in": "query", "name": "extend", "schema": { "type": "string" } },
-          { "in": "query", "name": "history", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "version", "schema": { "type": "string" }, "description": "Version" },
+          { "in": "query", "name": "extend", "schema": { "type": "string" }, "description": "Extend" },
+          { "in": "query", "name": "history", "schema": { "type": "string" }, "description": "History" }
         ],
         "summary": "Get",
         "x-sdk-interface": "runtimeEnvs.get",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/{runtimeEnvironmentName}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}\""
+            "source": "curl  \\\n    -X GET \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/${RUNTIME_ENVIRONMENT_NAME}?version=${VERSION}&extend=${EXTEND}&history=${HISTORY}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.runtimeEnvs.get({\n    name,\n    version,\n    extend,\n    history\n})"
+            "source": "sdk.runtimeEnvs.get({\n    runtimeEnvironmentName,\n    version,\n    extend,\n    history\n})"
           }
         ]
       },
       "put": {
         "x-action": "upsertRuntimeEnv",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments"],
         "operationId": "runtime-envs-update",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "extend", "schema": { "type": "string" } },
-          { "in": "query", "name": "description", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "extend", "schema": { "type": "string" }, "description": "Extend" },
+          { "in": "query", "name": "description", "schema": { "type": "string" }, "description": "Description" }
         ],
         "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
         "summary": "Update",
@@ -4431,38 +4846,48 @@
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/{runtimeEnvironmentName}?extend=${EXTEND}&description=${DESCRIPTION}\""
+            "source": "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/${RUNTIME_ENVIRONMENT_NAME}?extend=${EXTEND}&description=${DESCRIPTION}\""
           },
           {
             "lang": "node.js",
-            "source": "sdk.runtimeEnvs.update({ name, extend, description }, { ...REQUEST_BODY_OBJ })"
+            "source": "sdk.runtimeEnvs.update({ runtimeEnvironmentName, extend, description }, { ...REQUEST_BODY_OBJ })"
           }
         ]
       },
       "delete": {
         "x-action": "deleteRuntimeEnv",
         "x-entityIdPath": "params.runtimeEnvironmentName",
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Runtime Environments"],
         "operationId": "runtime-envs-delete",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "force", "schema": { "type": "string" } }
+          {
+            "in": "path",
+            "name": "runtimeEnvironmentName",
+            "schema": { "type": "string" },
+            "required": true,
+            "description": "Runtime environment name"
+          },
+          { "in": "query", "name": "force", "schema": { "type": "string" }, "description": "Force" }
         ],
         "summary": "Delete",
         "x-sdk-interface": "runtimeEnvs.delete",
         "x-code-samples": [
           {
             "lang": "curl",
-            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/{runtimeEnvironmentName}?force=${FORCE}\""
+            "source": "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/runtime-environments/${RUNTIME_ENVIRONMENT_NAME}?force=${FORCE}\""
           },
-          { "lang": "node.js", "source": "sdk.runtimeEnvs.delete({ name, force })" }
+          { "lang": "node.js", "source": "sdk.runtimeEnvs.delete({ runtimeEnvironmentName, force })" }
         ]
       }
     },
     "/runtime/testit": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Pipelines"],
         "operationId": "runtime-launch",
         "requestBody": {
@@ -4505,7 +4930,9 @@
         "parameters": [
           { "description": "The git context name", "in": "query", "name": "context", "schema": { "type": "string" } }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Repos"],
         "operationId": "repos-create",
         "requestBody": {
@@ -4549,13 +4976,13 @@
     "/services/{name}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Repos"],
         "operationId": "repos-get",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "context", "schema": { "type": "string" } }
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" },
+          { "in": "query", "name": "context", "schema": { "type": "string" }, "description": "Context" }
         ],
         "summary": "Get",
         "x-sdk-interface": "repos.get",
@@ -4568,12 +4995,14 @@
         ]
       },
       "delete": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Repos"],
         "operationId": "repos-delete",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "context", "schema": { "type": "string" } }
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" },
+          { "in": "query", "name": "context", "schema": { "type": "string" }, "description": "Context" }
         ],
         "summary": "Delete",
         "x-sdk-interface": "repos.delete",
@@ -4588,7 +5017,9 @@
     },
     "/team": {
       "post": {
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Teams"],
         "operationId": "teams-create",
         "requestBody": {
@@ -4623,7 +5054,7 @@
       },
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Teams"],
         "operationId": "teams-list",
@@ -4642,14 +5073,14 @@
     "/team/group/synchronize/name/{name}/type/{type}": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Teams"],
         "operationId": "teams-synchronize-client-with-group",
         "parameters": [
-          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true },
-          { "in": "path", "name": "type", "schema": { "type": "string" }, "required": true },
-          { "in": "query", "name": "access_token", "schema": { "type": "string" } }
+          { "in": "path", "name": "name", "schema": { "type": "string" }, "required": true, "description": "Name" },
+          { "in": "path", "name": "type", "schema": { "type": "string" }, "required": true, "description": "Type" },
+          { "in": "query", "name": "access_token", "schema": { "type": "string" }, "description": "Access token" }
         ],
         "summary": "Synchronize client with group",
         "x-sdk-interface": "teams.synchronizeClientWithGroup",
@@ -4680,7 +5111,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Teams"],
         "operationId": "teams-add-user",
         "summary": "Add user",
@@ -4712,7 +5145,9 @@
             "schema": { "type": "string" }
           }
         ],
-        "responses": { "200": { "description": "ok" } },
+        "responses": {
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
+        },
         "tags": ["Teams"],
         "operationId": "teams-remove-user",
         "summary": "Remove user",
@@ -4729,11 +5164,13 @@
     "/team/{userId}/findTeamsByUser": {
       "get": {
         "responses": {
-          "200": { "description": "ok", "content": { "application/json": { "schema": { "type": "object" } } } }
+          "200": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
         },
         "tags": ["Teams"],
         "operationId": "teams-list-by-user",
-        "parameters": [{ "in": "path", "name": "userId", "schema": { "type": "string" }, "required": true }],
+        "parameters": [
+          { "in": "path", "name": "userId", "schema": { "type": "string" }, "required": true, "description": "User id" }
+        ],
         "summary": "List by user",
         "x-sdk-interface": "teams.listByUser",
         "x-code-samples": [
@@ -4744,72 +5181,24 @@
           { "lang": "node.js", "source": "sdk.teams.listByUser({ userId })" }
         ]
       }
-    },
-    "/user": {
-      "post": {
-        "x-action": "updateUser",
-        "x-entityIdPath": "body._id",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "activeAccount": { "type": "object", "x-secure": true },
-                  "logins": { "type": "object", "x-secure": true },
-                  "key": { "type": "object", "x-secure": true }
-                }
-              }
-            }
-          }
-        },
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"{\\\"activeAccount\\\":${ACTIVE_ACCOUNT_OBJ},\\\"logins\\\":${LOGINS_OBJ},\\\"key\\\":${KEY_OBJ}}\" \\\n    \"https://g.codefresh.io/api/user\""
-          },
-          {
-            "lang": "node.js",
-            "source": "sdk.undefined({\n    activeAccount: { ...ACTIVE_ACCOUNT_OBJ },\n    logins: { ...LOGINS_OBJ },\n    key: { ...KEY_OBJ }\n})"
-          }
-        ],
-        "parameters": [],
-        "tags": []
-      }
-    },
-    "/user/onboarding-status/user": {
-      "post": {
-        "x-action": "createOnboardingStatusUser",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/user/onboarding-status/user\""
-          },
-          { "lang": "node.js", "source": "sdk.undefined()" }
-        ],
-        "parameters": [],
-        "tags": []
-      }
-    },
-    "/user/onboarding-status/account": {
-      "post": {
-        "x-action": "createOnboardingStatusAccount",
-        "x-code-samples": [
-          {
-            "lang": "curl",
-            "source": "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/user/onboarding-status/account\""
-          },
-          { "lang": "node.js", "source": "sdk.undefined()" }
-        ],
-        "parameters": [],
-        "tags": []
-      }
     }
   },
   "components": {
     "parameters": {
-      "accountName": { "in": "path", "name": "accountName", "required": true, "schema": { "type": "string" } },
-      "boardId": { "in": "query", "name": "boardId", "required": true, "schema": { "type": "string" } },
+      "accountName": {
+        "in": "path",
+        "name": "accountName",
+        "description": "Account name",
+        "required": true,
+        "schema": { "type": "string" }
+      },
+      "boardId": {
+        "in": "query",
+        "name": "boardId",
+        "description": "Board id",
+        "required": true,
+        "schema": { "type": "string" }
+      },
       "boardIdpath": {
         "description": "id of a board",
         "in": "path",
@@ -4868,6 +5257,7 @@
       }
     },
     "schemas": {
+      "requestBody": { "type": "object" },
       "abac": {
         "properties": {
           "teams": { "type": "array", "items": { "type": "string" } },
@@ -4878,6 +5268,7 @@
       }
     },
     "requestBodies": {
+      "json": { "content": { "application/json": { "schema": { "type": "object" } } } },
       "create_boardOptions": {
         "content": {
           "application/json": {
@@ -4926,6 +5317,9 @@
           }
         }
       }
+    },
+    "responses": {
+      "json": { "content": { "application/json": { "schema": { "type": "object" } } }, "description": "json" }
     },
     "securitySchemes": { "apiKey": { "in": "header", "name": "Authorization", "type": "apiKey" } }
   }

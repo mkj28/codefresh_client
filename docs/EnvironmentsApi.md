@@ -39,7 +39,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.EnvironmentsApi(codefresh_client.ApiClient(configuration))
-id = 'id_example' # str | 
+id = 'id_example' # str | Id
 
 try:
     # Get
@@ -53,7 +53,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**|  | 
+ **id** | **str**| Id | 
 
 ### Return type
 
@@ -121,7 +121,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_pause**
-> envs_pause(id)
+> object envs_pause(id)
 
 Pause
 
@@ -147,7 +147,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Pause
-    api_instance.envs_pause(id)
+    api_response = api_instance.envs_pause(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_pause: %s\n" % e)
 ```
@@ -160,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -169,12 +170,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_rename**
-> envs_rename(id, new_name)
+> object envs_rename(id, new_name)
 
 Rename
 
@@ -201,7 +202,8 @@ new_name = 'new_name_example' # str | The new name to assign to the environment
 
 try:
     # Rename
-    api_instance.envs_rename(id, new_name)
+    api_response = api_instance.envs_rename(id, new_name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_rename: %s\n" % e)
 ```
@@ -215,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -224,12 +226,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_start**
-> envs_start(id)
+> object envs_start(id)
 
 Start
 
@@ -255,7 +257,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Start
-    api_instance.envs_start(id)
+    api_response = api_instance.envs_start(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_start: %s\n" % e)
 ```
@@ -268,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -277,12 +280,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_status**
-> envs_status(id)
+> object envs_status(id)
 
 Status
 
@@ -308,7 +311,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Status
-    api_instance.envs_status(id)
+    api_response = api_instance.envs_status(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_status: %s\n" % e)
 ```
@@ -321,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -330,12 +334,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_stop**
-> envs_stop(id)
+> object envs_stop(id)
 
 Stop
 
@@ -361,7 +365,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Stop
-    api_instance.envs_stop(id)
+    api_response = api_instance.envs_stop(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_stop: %s\n" % e)
 ```
@@ -374,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -383,12 +388,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_terminate**
-> envs_terminate(id)
+> object envs_terminate(id)
 
 Terminate
 
@@ -414,7 +419,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Terminate
-    api_instance.envs_terminate(id)
+    api_response = api_instance.envs_terminate(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_terminate: %s\n" % e)
 ```
@@ -427,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -436,7 +442,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -491,7 +497,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **envs_unpause**
-> envs_unpause(id)
+> object envs_unpause(id)
 
 Unpause
 
@@ -517,7 +523,8 @@ id = 'id_example' # str | id of an object
 
 try:
     # Unpause
-    api_instance.envs_unpause(id)
+    api_response = api_instance.envs_unpause(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnvironmentsApi->envs_unpause: %s\n" % e)
 ```
@@ -530,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -539,7 +546,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

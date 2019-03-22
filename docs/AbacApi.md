@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **abac_list_by_resource**
-> abac_list_by_resource(resource)
+> object abac_list_by_resource(resource)
 
 Get rules by resource
 
@@ -43,7 +43,8 @@ resource = 'resource_example' # str | The id of the resource
 
 try:
     # Get rules by resource
-    api_instance.abac_list_by_resource(resource)
+    api_response = api_instance.abac_list_by_resource(resource)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_list_by_resource: %s\n" % e)
 ```
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -65,12 +66,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_list_by_team**
-> abac_list_by_team(team_id)
+> object abac_list_by_team(team_id)
 
 Get rules by team id
 
@@ -96,7 +97,8 @@ team_id = 'team_id_example' # str | The id of the team
 
 try:
     # Get rules by team id
-    api_instance.abac_list_by_team(team_id)
+    api_response = api_instance.abac_list_by_team(team_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_list_by_team: %s\n" % e)
 ```
@@ -109,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -118,12 +120,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_create**
-> abac_rules_create(inline_object=inline_object)
+> object abac_rules_create(inline_object=inline_object)
 
 Create rule
 
@@ -149,7 +151,8 @@ inline_object = codefresh_client.InlineObject() # InlineObject |  (optional)
 
 try:
     # Create rule
-    api_instance.abac_rules_create(inline_object=inline_object)
+    api_response = api_instance.abac_rules_create(inline_object=inline_object)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_create: %s\n" % e)
 ```
@@ -162,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -171,12 +174,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_create_in_batch**
-> abac_rules_create_in_batch(unknown_base_type)
+> object abac_rules_create_in_batch(unknown_base_type)
 
 Create rules in batch
 
@@ -202,7 +205,8 @@ unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |
 
 try:
     # Create rules in batch
-    api_instance.abac_rules_create_in_batch(unknown_base_type)
+    api_response = api_instance.abac_rules_create_in_batch(unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_create_in_batch: %s\n" % e)
 ```
@@ -215,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -224,12 +228,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_create_or_delete**
-> abac_rules_create_or_delete(inline_object1=inline_object1)
+> object abac_rules_create_or_delete(inline_object1=inline_object1)
 
 Create or delete rules
 
@@ -255,7 +259,8 @@ inline_object1 = codefresh_client.InlineObject1() # InlineObject1 |  (optional)
 
 try:
     # Create or delete rules
-    api_instance.abac_rules_create_or_delete(inline_object1=inline_object1)
+    api_response = api_instance.abac_rules_create_or_delete(inline_object1=inline_object1)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_create_or_delete: %s\n" % e)
 ```
@@ -268,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -277,12 +282,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_delete**
-> abac_rules_delete(rule)
+> object abac_rules_delete(rule)
 
 Delete rule
 
@@ -308,7 +313,8 @@ rule = 'rule_example' # str | The id of the rule
 
 try:
     # Delete rule
-    api_instance.abac_rules_delete(rule)
+    api_response = api_instance.abac_rules_delete(rule)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_delete: %s\n" % e)
 ```
@@ -321,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -330,12 +336,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_get**
-> abac_rules_get(rule)
+> object abac_rules_get(rule)
 
 Get rule
 
@@ -361,7 +367,8 @@ rule = 'rule_example' # str | The id of the rule
 
 try:
     # Get rule
-    api_instance.abac_rules_get(rule)
+    api_response = api_instance.abac_rules_get(rule)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_get: %s\n" % e)
 ```
@@ -374,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -383,7 +390,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -438,7 +445,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_tags_create**
-> abac_rules_tags_create(inline_object3=inline_object3)
+> object abac_rules_tags_create(inline_object3=inline_object3)
 
 Create rules tags
 
@@ -464,7 +471,8 @@ inline_object3 = codefresh_client.InlineObject3() # InlineObject3 |  (optional)
 
 try:
     # Create rules tags
-    api_instance.abac_rules_tags_create(inline_object3=inline_object3)
+    api_response = api_instance.abac_rules_tags_create(inline_object3=inline_object3)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_tags_create: %s\n" % e)
 ```
@@ -477,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -486,12 +494,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **abac_rules_tags_update**
-> abac_rules_tags_update(rule, inline_object2=inline_object2)
+> object abac_rules_tags_update(rule, inline_object2=inline_object2)
 
 Update rule tags
 
@@ -518,7 +526,8 @@ inline_object2 = codefresh_client.InlineObject2() # InlineObject2 |  (optional)
 
 try:
     # Update rule tags
-    api_instance.abac_rules_tags_update(rule, inline_object2=inline_object2)
+    api_response = api_instance.abac_rules_tags_update(rule, inline_object2=inline_object2)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling AbacApi->abac_rules_tags_update: %s\n" % e)
 ```
@@ -532,7 +541,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -541,7 +550,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

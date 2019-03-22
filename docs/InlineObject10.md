@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_advanced** | **bool** |  | [optional] [default to False]
+**is_advanced** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **vars** | **list[str]** |  | [optional] 
 **yaml_json** | **str** |  | [optional] 

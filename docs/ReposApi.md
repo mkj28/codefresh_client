@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **repos_create**
-> repos_create(context=context, inline_object31=inline_object31)
+> object repos_create(context=context, inline_object31=inline_object31)
 
 Create
 
@@ -41,7 +41,8 @@ inline_object31 = codefresh_client.InlineObject31() # InlineObject31 |  (optiona
 
 try:
     # Create
-    api_instance.repos_create(context=context, inline_object31=inline_object31)
+    api_response = api_instance.repos_create(context=context, inline_object31=inline_object31)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_create: %s\n" % e)
 ```
@@ -55,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -64,12 +65,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repos_delete**
-> repos_delete(name, context=context)
+> object repos_delete(name, context=context)
 
 Delete
 
@@ -91,12 +92,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ReposApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
-context = 'context_example' # str |  (optional)
+name = 'name_example' # str | Name
+context = 'context_example' # str | Context (optional)
 
 try:
     # Delete
-    api_instance.repos_delete(name, context=context)
+    api_response = api_instance.repos_delete(name, context=context)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repos_delete: %s\n" % e)
 ```
@@ -105,12 +107,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
- **context** | **str**|  | [optional] 
+ **name** | **str**| Name | 
+ **context** | **str**| Context | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -119,7 +121,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -146,8 +148,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ReposApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
-context = 'context_example' # str |  (optional)
+name = 'name_example' # str | Name
+context = 'context_example' # str | Context (optional)
 
 try:
     # Get
@@ -161,8 +163,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
- **context** | **str**|  | [optional] 
+ **name** | **str**| Name | 
+ **context** | **str**| Context | [optional] 
 
 ### Return type
 
@@ -258,9 +260,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ReposApi(codefresh_client.ApiClient(configuration))
-owner = 'owner_example' # str | 
-repo = 'repo_example' # str | 
-context = 'context_example' # str |  (optional)
+owner = 'owner_example' # str | Owner
+repo = 'repo_example' # str | Repo
+context = 'context_example' # str | Context (optional)
 
 try:
     # Get git repo
@@ -274,9 +276,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **owner** | **str**|  | 
- **repo** | **str**|  | 
- **context** | **str**|  | [optional] 
+ **owner** | **str**| Owner | 
+ **repo** | **str**| Repo | 
+ **context** | **str**| Context | [optional] 
 
 ### Return type
 
@@ -316,7 +318,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ReposApi(codefresh_client.ApiClient(configuration))
-context = 'context_example' # str |  (optional)
+context = 'context_example' # str | Context (optional)
 
 try:
     # List git repos (github, bitbucket, etc)
@@ -330,7 +332,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **context** | **str**|  | [optional] 
+ **context** | **str**| Context | [optional] 
 
 ### Return type
 
@@ -370,8 +372,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ReposApi(codefresh_client.ApiClient(configuration))
-context = 'context_example' # str |  (optional)
-thin = 'thin_example' # str |  (optional)
+context = 'context_example' # str | Context (optional)
+thin = 'thin_example' # str | Thin (optional)
 
 try:
     # List
@@ -385,8 +387,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **context** | **str**|  | [optional] 
- **thin** | **str**|  | [optional] 
+ **context** | **str**| Context | [optional] 
+ **thin** | **str**| Thin | [optional] 
 
 ### Return type
 

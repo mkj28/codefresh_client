@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **triggers_create**
-> triggers_create(event, pipeline, unknown_base_type=unknown_base_type)
+> object triggers_create(event, pipeline, unknown_base_type=unknown_base_type)
 
 Create
 
@@ -34,13 +34,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TriggersApi(codefresh_client.ApiClient(configuration))
-event = 'event_example' # str | 
-pipeline = 'pipeline_example' # str | 
+event = 'event_example' # str | Event
+pipeline = 'pipeline_example' # str | Pipeline
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Create
-    api_instance.triggers_create(event, pipeline, unknown_base_type=unknown_base_type)
+    api_response = api_instance.triggers_create(event, pipeline, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersApi->triggers_create: %s\n" % e)
 ```
@@ -49,13 +50,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event** | **str**|  | 
- **pipeline** | **str**|  | 
+ **event** | **str**| Event | 
+ **pipeline** | **str**| Pipeline | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -64,12 +65,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **triggers_delete**
-> triggers_delete(event, pipeline)
+> object triggers_delete(event, pipeline)
 
 Delete
 
@@ -91,12 +92,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TriggersApi(codefresh_client.ApiClient(configuration))
-event = 'event_example' # str | 
-pipeline = 'pipeline_example' # str | 
+event = 'event_example' # str | Event
+pipeline = 'pipeline_example' # str | Pipeline
 
 try:
     # Delete
-    api_instance.triggers_delete(event, pipeline)
+    api_response = api_instance.triggers_delete(event, pipeline)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling TriggersApi->triggers_delete: %s\n" % e)
 ```
@@ -105,12 +107,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event** | **str**|  | 
- **pipeline** | **str**|  | 
+ **event** | **str**| Event | 
+ **pipeline** | **str**| Pipeline | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -119,7 +121,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -146,7 +148,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TriggersApi(codefresh_client.ApiClient(configuration))
-event = 'event_example' # str | 
+event = 'event_example' # str | Event
 
 try:
     # Get event triggers
@@ -160,7 +162,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **event** | **str**|  | 
+ **event** | **str**| Event | 
 
 ### Return type
 
@@ -200,7 +202,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.TriggersApi(codefresh_client.ApiClient(configuration))
-pipeline = 'pipeline_example' # str | 
+pipeline = 'pipeline_example' # str | Pipeline
 
 try:
     # Get pipeline triggers
@@ -214,7 +216,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pipeline** | **str**|  | 
+ **pipeline** | **str**| Pipeline | 
 
 ### Return type
 

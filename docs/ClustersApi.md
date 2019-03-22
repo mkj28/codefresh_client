@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **clusters_delete**
-> clusters_delete(provider, id)
+> object clusters_delete(provider, id)
 
 Delete
 
@@ -31,12 +31,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ClustersApi(codefresh_client.ApiClient(configuration))
-provider = 'provider_example' # str | 
-id = 'id_example' # str | 
+provider = 'provider_example' # str | Provider
+id = 'id_example' # str | Id
 
 try:
     # Delete
-    api_instance.clusters_delete(provider, id)
+    api_response = api_instance.clusters_delete(provider, id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ClustersApi->clusters_delete: %s\n" % e)
 ```
@@ -45,12 +46,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **provider** | **str**|  | 
- **id** | **str**|  | 
+ **provider** | **str**| Provider | 
+ **id** | **str**| Id | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -59,7 +60,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **kubernetes_generate_image_pull_secret**
-> kubernetes_generate_image_pull_secret(namespace, selector, unknown_base_type=unknown_base_type)
+> object kubernetes_generate_image_pull_secret(namespace, selector, unknown_base_type=unknown_base_type)
 
 Generate image pull secret
 
@@ -30,13 +30,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.KubernetesApi(codefresh_client.ApiClient(configuration))
-namespace = 'namespace_example' # str | 
-selector = 'selector_example' # str | 
+namespace = 'namespace_example' # str | Namespace
+selector = 'selector_example' # str | Selector
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Generate image pull secret
-    api_instance.kubernetes_generate_image_pull_secret(namespace, selector, unknown_base_type=unknown_base_type)
+    api_response = api_instance.kubernetes_generate_image_pull_secret(namespace, selector, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling KubernetesApi->kubernetes_generate_image_pull_secret: %s\n" % e)
 ```
@@ -45,13 +46,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **namespace** | **str**|  | 
- **selector** | **str**|  | 
+ **namespace** | **str**| Namespace | 
+ **selector** | **str**| Selector | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -60,7 +61,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

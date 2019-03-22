@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **features_account**
-> features_account(account_id)
+> object features_account(account_id)
 
 Account
 
@@ -34,7 +34,8 @@ account_id = 'account_id_example' # str | The ID of the account to query for fea
 
 try:
     # Account
-    api_instance.features_account(account_id)
+    api_response = api_instance.features_account(account_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling FeaturesApi->features_account: %s\n" % e)
 ```
@@ -47,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -56,7 +57,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

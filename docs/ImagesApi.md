@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **images_add_from_external_source**
-> images_add_from_external_source()
+> object images_add_from_external_source()
 
 Add from external source
 
@@ -41,7 +41,8 @@ api_instance = codefresh_client.ImagesApi(codefresh_client.ApiClient(configurati
 
 try:
     # Add from external source
-    api_instance.images_add_from_external_source()
+    api_response = api_instance.images_add_from_external_source()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_add_from_external_source: %s\n" % e)
 ```
@@ -51,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -60,12 +61,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_delete_metadata**
-> images_delete_metadata(docker_image_id, key_name)
+> object images_delete_metadata(docker_image_id, key_name)
 
 Delete metadata
 
@@ -92,7 +93,8 @@ key_name = 'key_name_example' # str | name of the metadata key
 
 try:
     # Delete metadata
-    api_instance.images_delete_metadata(docker_image_id, key_name)
+    api_response = api_instance.images_delete_metadata(docker_image_id, key_name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_delete_metadata: %s\n" % e)
 ```
@@ -106,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -115,12 +117,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_get**
-> images_get(id)
+> object images_get(id)
 
 Get
 
@@ -146,7 +148,8 @@ id = 'id_example' # str | id of the Image
 
 try:
     # Get
-    api_instance.images_get(id)
+    api_response = api_instance.images_get(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_get: %s\n" % e)
 ```
@@ -159,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -168,12 +171,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_get_metadata**
-> images_get_metadata(docker_image_id)
+> object images_get_metadata(docker_image_id)
 
 Get metadata
 
@@ -199,7 +202,8 @@ docker_image_id = 'docker_image_id_example' # str | id of the Image (from docker
 
 try:
     # Get metadata
-    api_instance.images_get_metadata(docker_image_id)
+    api_response = api_instance.images_get_metadata(docker_image_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_get_metadata: %s\n" % e)
 ```
@@ -212,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -221,12 +225,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_get_tags**
-> images_get_tags(id)
+> object images_get_tags(id)
 
 Get tags
 
@@ -252,7 +256,8 @@ id = 'id_example' # str | name of the image
 
 try:
     # Get tags
-    api_instance.images_get_tags(id)
+    api_response = api_instance.images_get_tags(id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_get_tags: %s\n" % e)
 ```
@@ -265,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -274,7 +279,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -301,15 +306,15 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.ImagesApi(codefresh_client.ApiClient(configuration))
-limit = 'limit_example' # str |  (optional)
-offset = 'offset_example' # str |  (optional)
-metadata = 'metadata_example' # str |  (optional)
-tag = 'tag_example' # str |  (optional)
-type = 'type_example' # str |  (optional)
-branch = 'branch_example' # str |  (optional)
-image_display_name_regex = 'image_display_name_regex_example' # str |  (optional)
-select = 'select_example' # str |  (optional)
-sha = 'sha_example' # str |  (optional)
+limit = 'limit_example' # str | Limit (optional)
+offset = 'offset_example' # str | Offset (optional)
+metadata = 'metadata_example' # str | Metadata (optional)
+tag = 'tag_example' # str | Tag (optional)
+type = 'type_example' # str | Type (optional)
+branch = 'branch_example' # str | Branch (optional)
+image_display_name_regex = 'image_display_name_regex_example' # str | Image display name regex (optional)
+select = 'select_example' # str | Select (optional)
+sha = 'sha_example' # str | Sha (optional)
 
 try:
     # List
@@ -323,15 +328,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **str**|  | [optional] 
- **offset** | **str**|  | [optional] 
- **metadata** | **str**|  | [optional] 
- **tag** | **str**|  | [optional] 
- **type** | **str**|  | [optional] 
- **branch** | **str**|  | [optional] 
- **image_display_name_regex** | **str**|  | [optional] 
- **select** | **str**|  | [optional] 
- **sha** | **str**|  | [optional] 
+ **limit** | **str**| Limit | [optional] 
+ **offset** | **str**| Offset | [optional] 
+ **metadata** | **str**| Metadata | [optional] 
+ **tag** | **str**| Tag | [optional] 
+ **type** | **str**| Type | [optional] 
+ **branch** | **str**| Branch | [optional] 
+ **image_display_name_regex** | **str**| Image display name regex | [optional] 
+ **select** | **str**| Select | [optional] 
+ **sha** | **str**| Sha | [optional] 
 
 ### Return type
 
@@ -349,7 +354,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_tag**
-> images_tag(id, tag)
+> object images_tag(id, tag)
 
 Tag
 
@@ -376,7 +381,8 @@ tag = 'tag_example' # str | tag
 
 try:
     # Tag
-    api_instance.images_tag(id, tag)
+    api_response = api_instance.images_tag(id, tag)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_tag: %s\n" % e)
 ```
@@ -390,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -399,12 +405,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_untag**
-> images_untag(id, tag)
+> object images_untag(id, tag)
 
 Untag
 
@@ -431,7 +437,8 @@ tag = 'tag_example' # str | tag ObjectId
 
 try:
     # Untag
-    api_instance.images_untag(id, tag)
+    api_response = api_instance.images_untag(id, tag)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_untag: %s\n" % e)
 ```
@@ -445,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -454,12 +461,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **images_upsert_metadata**
-> images_upsert_metadata(docker_image_id, inline_object24=inline_object24)
+> object images_upsert_metadata(docker_image_id, inline_object24=inline_object24)
 
 Upsert metadata
 
@@ -486,7 +493,8 @@ inline_object24 = codefresh_client.InlineObject24() # InlineObject24 |  (optiona
 
 try:
     # Upsert metadata
-    api_instance.images_upsert_metadata(docker_image_id, inline_object24=inline_object24)
+    api_response = api_instance.images_upsert_metadata(docker_image_id, inline_object24=inline_object24)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ImagesApi->images_upsert_metadata: %s\n" % e)
 ```
@@ -500,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -509,7 +517,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

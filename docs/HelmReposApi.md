@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **helm_repos_create**
-> helm_repos_create(unknown_base_type=unknown_base_type)
+> object helm_repos_create(unknown_base_type=unknown_base_type)
 
 Create
 
@@ -38,7 +38,8 @@ unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  
 
 try:
     # Create
-    api_instance.helm_repos_create(unknown_base_type=unknown_base_type)
+    api_response = api_instance.helm_repos_create(unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReposApi->helm_repos_create: %s\n" % e)
 ```
@@ -51,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -60,12 +61,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_repos_delete**
-> helm_repos_delete(name)
+> object helm_repos_delete(name)
 
 Delete
 
@@ -87,11 +88,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmReposApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
+name = 'name_example' # str | Name
 
 try:
     # Delete
-    api_instance.helm_repos_delete(name)
+    api_response = api_instance.helm_repos_delete(name)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReposApi->helm_repos_delete: %s\n" % e)
 ```
@@ -100,11 +102,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
+ **name** | **str**| Name | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -113,7 +115,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -140,7 +142,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmReposApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
+name = 'name_example' # str | Name
 
 try:
     # Get
@@ -154,7 +156,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
+ **name** | **str**| Name | 
 
 ### Return type
 
@@ -194,7 +196,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmReposApi(codefresh_client.ApiClient(configuration))
-query = 'query_example' # str |  (optional)
+query = 'query_example' # str | Query (optional)
 
 try:
     # List
@@ -208,7 +210,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **str**|  | [optional] 
+ **query** | **str**| Query | [optional] 
 
 ### Return type
 
@@ -226,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **helm_repos_update**
-> helm_repos_update(name, unknown_base_type=unknown_base_type)
+> object helm_repos_update(name, unknown_base_type=unknown_base_type)
 
 Update
 
@@ -248,12 +250,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = codefresh_client.HelmReposApi(codefresh_client.ApiClient(configuration))
-name = 'name_example' # str | 
+name = 'name_example' # str | Name
 unknown_base_type = codefresh_client.UNKNOWN_BASE_TYPE() # UNKNOWN_BASE_TYPE |  (optional)
 
 try:
     # Update
-    api_instance.helm_repos_update(name, unknown_base_type=unknown_base_type)
+    api_response = api_instance.helm_repos_update(name, unknown_base_type=unknown_base_type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HelmReposApi->helm_repos_update: %s\n" % e)
 ```
@@ -262,12 +265,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**|  | 
+ **name** | **str**| Name | 
  **unknown_base_type** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -276,7 +279,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

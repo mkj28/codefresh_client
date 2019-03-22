@@ -23,6 +23,7 @@ from codefresh_client.api.pipelines_api import PipelinesApi
 from codefresh_client.api.progress_api import ProgressApi
 from codefresh_client.api.repos_api import ReposApi
 from codefresh_client.api.runtime_environments_api import RuntimeEnvironmentsApi
+from codefresh_client.api.runtime_environments__api import RuntimeEnvironmentsApi
 from codefresh_client.api.runtime_environments__account_api import RuntimeEnvironmentsAccountApi
 from codefresh_client.api.runtime_environments__plan_api import RuntimeEnvironmentsPlanApi
 from codefresh_client.api.runtime_environments__system_api import RuntimeEnvironmentsSystemApi
@@ -32,4 +33,3 @@ from codefresh_client.api.triggers_api import TriggersApi
 from codefresh_client.api.triggers_events_api import TriggersEventsApi
 from codefresh_client.api.triggers_types_api import TriggersTypesApi
 from codefresh_client.api.charts_api import ChartsApi
-from codefresh_client.api.default_api import DefaultApi
